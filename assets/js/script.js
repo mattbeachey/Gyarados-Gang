@@ -20,3 +20,13 @@ function initProgram(){
 //Refresh 
 //Share with others
 //"Create pack"
+
+
+// Dog breed personality matches
+// Adventurous: Rhodesian Ridgeback
+// Charismatic: Golden Retriever
+// Mellow: Great Dane
+// Rational: Border Collie
+// Reliable: Labrador
+// Social: Husky
+// Thoughtful: Boxer
