@@ -1,12 +1,42 @@
-function initProgram(){
+function initProgram() {
+    let dogBreed = "retriever/golden"
+    let informationGathered;
 
-}initProgram();
+    //references dog API 
+    //saves that information to the informationGathered variable
+    //runs the renderDogPic function
+    function getInfo() {
+        const queryURL = "https://dog.ceo/api/breed/" + dogBreed + "/images/random"
+        axios.get(queryURL)
+            .then(function (response) {
+                informationGathered = response;
+                renderDogPic();
+            }
+            )
+    } getInfo();
+
+    //takes the information held in the "informationGathered" variable
+    //creates an element with the image tag
+    //appends that information to the body
+    function renderDogPic() {
+        const dogPicEl = document.createElement("img")
+        dogPicEl.setAttribute("src", informationGathered.data.message);
+        document.body.append(dogPicEl);
+    }
+} initProgram();
+
+//Done
+//Import Dog Api
+//Get random dog image based on breed
+
+
+
+
+
 
 
 // Necessary
-//Import Dog Api
 //Import traitify API
-//Get random dog image based on breed
 //Assign personality type to dog breed
 //Hide start screen/unhide quiz screen
 //Hide quiz screen/unhide results screen
