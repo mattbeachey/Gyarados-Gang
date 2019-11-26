@@ -6,6 +6,7 @@ function initProgram() {
     //Buttons on the document.
     const testingSelectEl = document.getElementById("testingSelect");
     const testingButtonEl = document.getElementById("testingButton");
+    const startPersQuizEl = document.getElementById("startQuiz");
     const mainflexEl = document.getElementById("mainflex");
     const moveForwardButtonEl = document.getElementById("moveForward");
     const appNameEl = document.getElementById("appName")
@@ -31,6 +32,11 @@ function initProgram() {
     startOverEl.addEventListener("click", function () {
         startOver();
     })
+
+    startPersQuizEl.addEventListener("click", function(){
+        startQuiz();
+    })
+
 
     //moves the dogify logo and dog image around the screen
     function moveForward() {
@@ -101,6 +107,11 @@ function initProgram() {
         const dogPicEl = document.createElement("img")
         dogPicEl.setAttribute("src", informationGathered.data.message);
         document.body.append(dogPicEl);
+    }
+
+    function startQuiz(){
+            const quizQuestions = "https://app.crystalknows.com/register?api_customer_id=522e853a-8315-4f83-a59c-99fdade8341b&api_company_name=I%20Used%20To%20Be%20A%20Bear&api_user_email=%5BUSER_EMAIL_HERE%5D"
+            
     }
 
 
