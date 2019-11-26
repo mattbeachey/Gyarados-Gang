@@ -69,7 +69,7 @@ body {
 
     /* border: 2px solid black; */
 }
-<<<<<<< HEAD
+
 
 .quizButton {
 
@@ -77,7 +77,7 @@ body {
     width: 185px;
 
 }
-=======
+
 .mainflexClick {
     width: 80%;
     display: flex;
@@ -104,4 +104,20 @@ body {
     align-items: center;
     /* border: 2px solid black; */
 }
->>>>>>> a3b68a8bffde9dcedf891d00b0a99dcf45e5ac4d
+
+
+.start-instruction {
+    background-color: rgba(255, 255, 255, 0.664);
+    
+    border-radius: 16px;
+    
+}
+
+p {
+    font-family: 'Roboto';
+    color: black;
+    font-weight: bolder;
+    font-size: 20px;
+    margin: 16px;
+}
+
