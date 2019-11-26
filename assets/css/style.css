@@ -9,9 +9,9 @@ body {
 
 }
 
-header {
+.spacer {
     width: 100%;
-    height: 150px;
+    height: 100px;
     /* border: 2px solid black; */
 }
 
@@ -20,13 +20,25 @@ h1 {
     font-family: 'Calistoga';
 }
 
+h2 {
+    font-size: 60px;
+    font-family: 'Calistoga';
+}
+
 .dogimage {
     position: absolute;
     right: 10%;
     height: 500px;
     width: 500px;
-
 }
+
+.dogimageSmall {
+    position: absolute;
+    right: 10%;
+    height: 250px;
+    width: 250px;
+}
+
 
 @media screen and (max-width: 992px) {
     .dogimage {
@@ -40,5 +52,4 @@ h1 {
     justify-content: space-between;
     align-items: center;
     /* border: 2px solid black; */
-
 }
