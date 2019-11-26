@@ -31,6 +31,7 @@ body {
 .dogimage {
     position: absolute;
     right: 10%;
+    top: -2%;
     height: 500px;
     width: 500px;
     transition: 1s;
@@ -38,6 +39,7 @@ body {
 
 .dogimageSmall {
     position: absolute;
+    top: -2%;
     right: 10%;
     height: 250px;
     width: 250px;
@@ -53,7 +55,7 @@ body {
 
 
 @media screen and (max-width: 992px) {
-    .dogimage {
+    .dogimage, .dogimageSmall, .dogimageResults {
     opacity: .3;
     }
 }
@@ -62,7 +64,7 @@ body {
     width: 80%;
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    /* align-items: center; */
     transition: 1s;
 
     /* border: 2px solid black; */
@@ -80,7 +82,7 @@ body {
     width: 80%;
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
+    /* align-items: flex-start; */
     transition: 1s;
     /* border: 2px solid black; */
 }
