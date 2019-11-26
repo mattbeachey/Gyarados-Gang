@@ -70,3 +70,18 @@ h2 {
     align-items: center;
     /* border: 2px solid black; */
 }
+
+.start-instruction {
+    background-color: rgba(255, 255, 255, 0.664);
+    
+    border-radius: 16px;
+    
+}
+
+p {
+    font-family: 'Roboto';
+    color: black;
+    font-weight: bolder;
+    font-size: 20px;
+    margin: 16px;
+}
