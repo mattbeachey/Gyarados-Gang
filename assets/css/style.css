@@ -69,6 +69,15 @@ body {
 
     /* border: 2px solid black; */
 }
+<<<<<<< HEAD
+
+.quizButton {
+
+    height: 32px;
+    width: 185px;
+
+}
+=======
 .mainflexClick {
     width: 80%;
     display: flex;
@@ -95,3 +104,4 @@ body {
     align-items: center;
     /* border: 2px solid black; */
 }
+>>>>>>> a3b68a8bffde9dcedf891d00b0a99dcf45e5ac4d
