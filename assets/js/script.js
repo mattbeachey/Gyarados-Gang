@@ -1,6 +1,39 @@
 function initProgram() {
     let dogBreed = "retriever/golden"
     let informationGathered;
+    let trait = "Adventurous";
+    const testingSelectEl = document.getElementById("testingSelect");
+    const testingButtonEl = document.getElementById("testingButton");
+
+    testingButtonEl.addEventListener("click", function () {
+        applyTraitToDog();
+    }
+    )
+
+    function applyTraitToDog() {
+        trait = testingSelectEl.value;
+        switch (trait) {
+            case 'Adventurous':
+                dogBreed = "ridgeback/rhodesian"
+                break;
+            case 'Charismatic':
+                dogBreed = "retriever/golden"
+                break;
+            case 'Mellow':
+                dogBreed = "dane/great"
+                break;
+            case 'Rational':
+                dogBreed = "collie/border"
+                break;
+            case 'Social':
+                dogBreed = "husky"
+                break;
+            case 'Thoughtful':
+                dogBreed = "boxer"
+                break;
+        }
+        getInfo();
+    }
 
     //references dog API 
     //saves that information to the informationGathered variable
@@ -13,7 +46,7 @@ function initProgram() {
                 renderDogPic();
             }
             )
-    } getInfo();
+    }
 
     //takes the information held in the "informationGathered" variable
     //creates an element with the image tag
@@ -23,7 +56,14 @@ function initProgram() {
         dogPicEl.setAttribute("src", informationGathered.data.message);
         document.body.append(dogPicEl);
     }
+
+
+
 } initProgram();
+
+
+
+
 
 //Done
 //Import Dog Api
@@ -50,9 +90,20 @@ function initProgram() {
 //Refresh 
 //Share with others
 //"Create pack"
+//smooth transition effects
+//hover dog image
 
 
 // Dog breed personality matches
+// Adventurous: Rhodesian Ridgeback
+// Charismatic: Golden Retriever
+// Mellow: Great Dane
+// Rational: Border Collie
+// Reliable: Labrador
+// Social: Husky
+// Thoughtful: boxer 
+
+
 // Adventurous: Rhodesian Ridgeback
 // Charismatic: Golden Retriever
 // Mellow: Great Dane
