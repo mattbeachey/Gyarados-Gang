@@ -12,17 +12,20 @@ body {
 .spacer {
     width: 100%;
     height: 100px;
+    transition: 1s;
     /* border: 2px solid black; */
 }
 
-h1 {
+.header-big {
     font-size: 90px;
     font-family: 'Calistoga';
+    transition: 1s;
 }
 
-h2 {
+.header-small {
     font-size: 60px;
     font-family: 'Calistoga';
+    transition: 1s;
 }
 
 .dogimage {
@@ -30,6 +33,7 @@ h2 {
     right: 10%;
     height: 500px;
     width: 500px;
+    transition: 1s;
 }
 
 .dogimageSmall {
@@ -37,6 +41,7 @@ h2 {
     right: 10%;
     height: 250px;
     width: 250px;
+    transition: 1s;
 }
 .dogimageResults {
     position: absolute;
@@ -58,10 +63,28 @@ h2 {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    transition: 1s;
+
+    /* border: 2px solid black; */
+}
+.mainflexClick {
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    transition: 1s;
     /* border: 2px solid black; */
 }
 
 
+.testing-realm{
+    margin-top:200px;
+}
+
+.disappear{
+    height: 0px;
+    transition: 1s;
+}
 
 .mainflexResults {
     width: 80%;

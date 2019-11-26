@@ -11,20 +11,39 @@
 </head>
 
 <body>
-    <div class="spacer">
 
+    <div class="spacer" id="spacer">
     </div>
 
-    <div class="mainflex">
-        <h1> Doggify </h1>
-        <img class="dogimage" src="./assets/images/doggify-threshold-face-square.png">
+
+    <div class="mainflex" id="mainflex">
+        <h1 class="header-big" id="appName"> Doggify </h1>
+        <img class="dogimage" id="dogImage" src="./assets/images/doggify-threshold-face-square.png">
     </div>
 
 
     
 
 
-    <div>
+
+
+    <div class="testing-realm" id="testingRealm">
+
+
+        <!-- Buttons to move forward/backwards -->
+        <button id="moveForward">
+            Move Forward
+        </button>
+        <button id ="startOver">
+            Start Over
+        </button>
+
+
+
+
+
+
+        <!-- Dropdown menu of our different personality types -->
         <select name="testingSelect" id="testingSelect">
             <option value="Adventurous">Adventurous</option>
             <option value="Charismatic">Charismatic</option>
@@ -34,9 +53,16 @@
             <option value="Social">Social</option>
             <option value="Thoughtful">Thoughtful</option>
         </select>
-        <button id ="testingButton">See doge</button>
+        <button id="testingButton">See doge</button>
     </div>
 
+
+
+
+
+
+    <!-- Referencing our different js pages -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="assets/js/script.js"></script>
 </body>
