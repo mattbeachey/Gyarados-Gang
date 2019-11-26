@@ -58,6 +58,11 @@ body {
     .dogimage, .dogimageSmall, .dogimageResults {
     opacity: .3;
     }
+    .dogimage {
+    position: absolute;
+    right:-10%;        
+    }
+
 }
 
 .mainflex {
@@ -69,6 +74,15 @@ body {
 
     /* border: 2px solid black; */
 }
+
+
+.quizButton {
+
+    height: 32px;
+    width: 185px;
+
+}
+
 .mainflexClick {
     width: 80%;
     display: flex;
@@ -95,3 +109,20 @@ body {
     align-items: center;
     /* border: 2px solid black; */
 }
+
+
+.start-instruction {
+    background-color: rgba(255, 255, 255, 0.664);
+    
+    border-radius: 16px;
+    
+}
+
+p {
+    font-family: 'Roboto';
+    color: black;
+    font-weight: bolder;
+    font-size: 20px;
+    margin: 16px;
+}
+
