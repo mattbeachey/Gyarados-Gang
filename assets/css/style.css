@@ -58,6 +58,11 @@ body {
     .dogimage, .dogimageSmall, .dogimageResults {
     opacity: .3;
     }
+    .dogimage {
+    position: absolute;
+    right:-10%;        
+    }
+
 }
 
 .mainflex {
