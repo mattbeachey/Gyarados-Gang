@@ -1,15 +1,67 @@
 function initProgram() {
-    let dogBreed = "retriever/golden"
+    let dogBreed;
     let informationGathered;
     let trait = "Adventurous";
+
+    //Buttons on the document.
     const testingSelectEl = document.getElementById("testingSelect");
     const testingButtonEl = document.getElementById("testingButton");
+    const startPersQuizEl = document.getElementById("startQuiz");
+    const mainflexEl = document.getElementById("mainflex");
+    const moveForwardButtonEl = document.getElementById("moveForward");
+    const appNameEl = document.getElementById("appName")
+    const spacerEl = document.getElementById("spacer")
+    const dogImageEl = document.getElementById("dogImage")
+    const startOverEl = document.getElementById("startOver")
 
+    //Adds an event listener to the button for testing
+    //runs the applyTraitToDog function
     testingButtonEl.addEventListener("click", function () {
         applyTraitToDog();
     }
     )
 
+    //Adds an event listener to the move forward button
+    //runs the moveForward function
+    moveForwardButtonEl.addEventListener("click", function () {
+        moveForward();
+    })
+
+     //Adds an event listener to the move forward button
+    //runs the startOver function
+    startOverEl.addEventListener("click", function () {
+        startOver();
+    })
+
+    startPersQuizEl.addEventListener("click", function(){
+        startQuiz();
+    })
+
+
+    //moves the dogify logo and dog image around the screen
+    function moveForward() {
+        spacerEl.setAttribute("class", "disappear");
+        mainflexEl.removeAttribute("class", "mainflex");
+        mainflexEl.setAttribute("class", "mainflexClick");
+        appNameEl.removeAttribute("class", "header-big");
+        appNameEl.setAttribute("class", "header-small");
+        dogImageEl.removeAttribute("class", "dogimage");
+        dogImageEl.setAttribute("class", "dogimageSmall");
+    }
+
+    //moves the dogify logo and dog image back to the start
+    function startOver() {
+        spacerEl.setAttribute("class", "spacer");
+        mainflexEl.removeAttribute("class", "mainflexClick");
+        mainflexEl.setAttribute("class", "mainflex");
+        appNameEl.removeAttribute("class", "header-small");
+        appNameEl.setAttribute("class", "header-big");
+        dogImageEl.removeAttribute("class", "dogimageSmall");
+        dogImageEl.setAttribute("class", "dogimage");
+    }
+
+    // a series of if then statements to make sure the correct dog breed is given when a trait is received.
+    //runs the get info function
     function applyTraitToDog() {
         trait = testingSelectEl.value;
         switch (trait) {
@@ -57,6 +109,11 @@ function initProgram() {
         document.body.append(dogPicEl);
     }
 
+    function startQuiz(){
+            const quizQuestions = "https://app.crystalknows.com/register?api_customer_id=522e853a-8315-4f83-a59c-99fdade8341b&api_company_name=I%20Used%20To%20Be%20A%20Bear&api_user_email=%5BUSER_EMAIL_HERE%5D"
+            
+    }
+
 
 
 } initProgram();
@@ -90,6 +147,7 @@ function initProgram() {
 //Refresh 
 //Share with others
 //"Create pack"
+    //if local data only
 //smooth transition effects
 //hover dog image
 
