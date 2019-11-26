@@ -43,6 +43,13 @@ body {
     width: 250px;
     transition: 1s;
 }
+.dogimageResults {
+    position: absolute;
+    justify-content: center;
+    height: 500px;
+    width: 500px;
+    opacity: .3;
+}
 
 
 @media screen and (max-width: 992px) {
@@ -69,6 +76,7 @@ body {
     /* border: 2px solid black; */
 }
 
+
 .testing-realm{
     margin-top:200px;
 }
@@ -76,5 +84,12 @@ body {
 .disappear{
     height: 0px;
     transition: 1s;
+}
 
+.mainflexResults {
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border: 2px solid black; */
 }
