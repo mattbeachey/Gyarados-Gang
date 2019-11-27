@@ -36,12 +36,6 @@ function initProgram() {
         `   Are you a good boy?`,
         `   `]
 
-    //Testing the Beer API on console
-    //     beerAPITestEl.addEventListener("click", function () {
-    //     startBeer();
-        
-    // })
-    // console.log(beerAPITestEl);
 
 
     //Adds an event listener to the button for testing
@@ -188,36 +182,20 @@ function initProgram() {
             )
         }
     } renderDogQuestions();
-
-    function getBeer(){
-
-    beerAPITestEl.addEventListener("click", function(event){
-        let queryURL = "https://sandbox-api.brewerydb.com/v2/beer/random?key=dacf13544d6181666d48b2fd4ea7de3e";
-        event.preventDefault();
-        
-        console.log(queryURL);
-
-       axios.get(queryURL)
-       .then(function(response){
-
-
-        console.log(queryURL);
-        console.log(response);
-
-       });
-
-        
-        
-
-
-    });
     
+
 
 
 } initProgram();
 
-
-
+    function getBeer() {
+        const queryURL = "https://sandbox-api.brewerydb.com/v2/beer/random?key=dacf13544d6181666d48b2fd4ea7de3e"
+        axios.get(queryURL)
+            .then(function (response) {
+               console.log(queryURL);
+            }
+            )
+    }getBeer()
 
 
 //Done
