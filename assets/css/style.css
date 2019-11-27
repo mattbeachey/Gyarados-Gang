@@ -137,7 +137,7 @@ p {
 }
 
 .dogQ0, .dogQ1, .dogQ2, .dogQ3 {
-    background-color: aqua;
+    /* background-color: aqua; */
     white-space: pre;
 }
 
