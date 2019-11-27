@@ -1,9 +1,11 @@
 function initProgram() {
     let dogBreed;
+    let beerType;
     let informationGathered;
     let trait = "Adventurous";
 
     //Buttons on the document.
+    const beerAPITestEl = document.getElementById("testThisButton");
     const testingSelectEl = document.getElementById("testingSelect");
     const testingButtonEl = document.getElementById("testingButton");
     const startPersQuizEl = document.getElementById("startQuiz");
@@ -33,6 +35,14 @@ function initProgram() {
         `	Do you gain an irresistible feeling to scratch the back of your ear with your foot?	`,
         `   Are you a good boy?`,
         `   `]
+
+    //Testing the Beer API on console
+    //     beerAPITestEl.addEventListener("click", function () {
+    //     startBeer();
+        
+    // })
+    // console.log(beerAPITestEl);
+
 
     //Adds an event listener to the button for testing
     //runs the applyTraitToDog function
@@ -82,7 +92,32 @@ function initProgram() {
 
     // a series of if then statements to make sure the correct dog breed is given when a trait is received.
     //runs the get info function
-    function applyTraitToDog() {
+    // function applyTraitToDog() {
+    //     trait = testingSelectEl.value;
+    //     switch (trait) {
+    //         case 'Adventurous':
+    //             dogBreed = "ridgeback/rhodesian"
+    //             break;
+    //         case 'Charismatic':
+    //             dogBreed = "retriever/golden"
+    //             break;
+    //         case 'Mellow':
+    //             dogBreed = "dane/great"
+    //             break;
+    //         case 'Rational':
+    //             dogBreed = "collie/border"
+    //             break;
+    //         case 'Social':
+    //             dogBreed = "husky"
+    //             break;
+    //         case 'Thoughtful':
+    //             dogBreed = "boxer"
+    //             break;
+    //     }
+    //     getInfo();
+    // }
+
+        function applyBeerToDog() {
         trait = testingSelectEl.value;
         switch (trait) {
             case 'Adventurous':
@@ -153,12 +188,30 @@ function initProgram() {
             )
         }
     } renderDogQuestions();
-    
-    function startQuiz(){
-            const quizQuestions = "https://app.crystalknows.com/register?api_customer_id=522e853a-8315-4f83-a59c-99fdade8341b&api_company_name=I%20Used%20To%20Be%20A%20Bear&api_user_email=%5BUSER_EMAIL_HERE%5D"
-            
-    }
 
+    function getBeer(){
+
+    beerAPITestEl.addEventListener("click", function(event){
+        let queryURL = "https://sandbox-api.brewerydb.com/v2/beer/random?key=dacf13544d6181666d48b2fd4ea7de3e";
+        event.preventDefault();
+        
+        console.log(queryURL);
+
+       axios.get(queryURL)
+       .then(function(response){
+
+
+        console.log(queryURL);
+        console.log(response);
+
+       });
+
+        
+        
+
+
+    });
+    
 
 
 } initProgram();
