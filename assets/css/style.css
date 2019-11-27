@@ -22,6 +22,22 @@ body {
     transition: 1s;
 }
 
+.header-big-results {
+    color: #fde24a;
+    font-size: 90px;
+    font-family: 'Calistoga';
+    transition: 1s;
+    white-space: pre;
+    text-align: center;
+    position: relative;
+    right: 10%;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #c4a600;
+    z-index: 2;
+    /* text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000; */
+    
+}
+
 .header-small {
     font-size: 60px;
     font-family: 'Calistoga';
@@ -51,6 +67,8 @@ body {
     height: 500px;
     width: 500px;
     opacity: .3;
+    z-index: 1;
+
 }
 
 
