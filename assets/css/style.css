@@ -54,22 +54,11 @@ body {
 }
 
 
-@media screen and (max-width: 992px) {
-    .dogimage, .dogimageSmall, .dogimageResults {
-    opacity: .3;
-    }
-    .dogimage {
-    position: absolute;
-    right:-10%;        
-    }
-
-}
-
 .mainflex {
     width: 80%;
     display: flex;
-    justify-content: space-between;
-    /* align-items: center; */
+    /* justify-content: space-between; */
+    align-items: center;
     transition: 1s;
 
     /* border: 2px solid black; */
@@ -113,7 +102,6 @@ body {
 
 .start-instruction {
     background-color: rgba(255, 255, 255, 0.664);
-    
     border-radius: 16px;
     width: 50%;
     position: absolute;
@@ -128,5 +116,29 @@ p {
     font-weight: bolder;
     font-size: 20px;
     margin: 16px;
+}
+
+.dogQ0, .dogQ1, .dogQ2, .dogQ3 {
+    background-color: aqua;
+    white-space: pre;
+}
+
+
+@media screen and (max-width: 992px) {
+    .dogimage, .dogimageSmall, .dogimageResults {
+    opacity: .3;
+    }
+    .dogimage {
+    position: absolute;
+    right:-10%;        
+    }
+    .start-instruction {
+    background-color: rgba(255, 255, 255, 0.664);
+    border-radius: 16px;
+    width: 75%;
+    position: absolute;
+    top: 40%;
+    } 
+
 }
 
