@@ -1,11 +1,44 @@
 function initProgram() {
     let dogBreed;
-    let beerType;
     let informationGathered;
     let trait = "Adventurous";
 
+    //Google Maps API Variables
+
+   
+
+    // const apiKey = "AIzaSyCTeE4A-78FaUSVBlEKSvpdcDqTT8eFg3E";
+    // src="https://maps.googleapis.com/maps/api/js?key=" + apiKey + "&callback=initMap"
+    var unirest = require("unirest");
+
+    var req = unirest("GET", "https://google-maps-geocoding.p.rapidapi.com/geocode/json");
+    
+    
+
+    req.query({
+	"language": "en",
+	"address": "1420 Eckles Ave%2C St Paul%2C MN 55108"
+    });
+
+    req.headers({
+	"x-rapidapi-host": "google-maps-geocoding.p.rapidapi.com",
+	"x-rapidapi-key": "a0b0c604c7mshc44691fb6b879c8p15b44fjsn50b69bb48df4"
+    });
+
+    req.end(function (res) {
+	if (res.error) throw new Error(res.error);
+
+	console.log(res.body);
+    });
+
+    
+
+
+
+
+
+
     //Buttons on the document.
-    const beerAPITestEl = document.getElementById("testThisButton");
     const testingSelectEl = document.getElementById("testingSelect");
     const testingButtonEl = document.getElementById("testingButton");
     const startPersQuizEl = document.getElementById("startQuiz");
@@ -186,16 +219,35 @@ function initProgram() {
 
 
 
-} initProgram();
+} 
+initProgram();
 
-    function getBeer() {
-        const queryURL = "https://sandbox-api.brewerydb.com/v2/beer/random?key=dacf13544d6181666d48b2fd4ea7de3e"
-        axios.get(queryURL)
-            .then(function (response) {
-               console.log(queryURL);
-            }
-            )
-    }getBeer()
+
+
+function initMap() {
+  // The location of Uluru
+  var uluru = {lat: -25.344, lng: 131.036};
+  // The map, centered at Uluru
+  var map = new google.maps.Map(
+      document.getElementById('map'), {zoom: 4, center: uluru});
+  // The marker, positioned at Uluru
+  var marker = new google.maps.Marker({position: uluru, map: map});
+}
+
+function displayMaps (){
+
+
+    // const hi = $("<div>");
+    // hi.text("hello world");
+    // // $("#map").append(hi);
+
+    initMap();
+
+}
+displayMaps();
+
+
+
 
 
 //Done
