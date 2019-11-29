@@ -222,17 +222,33 @@ function initProgram() {
 } 
 // initProgram();
 
+//JS for longitude and latitude, taken from https://developer.mozilla.org/en-US/docs/Web/API/Coordinates/longitude
+
+let button = document.getElementById("get-location");
+let latText = document.getElementById("latitude");
+let longText = document.getElementById("longitude");
+
+button.addEventListener("click", function() {
+  navigator.geolocation.getCurrentPosition(function(position) {
+    let lat = position.coords.latitude;
+    let long = position.coords.longitude;
+
+    latText.innerText = lat.toFixed(2);
+    longText.innerText = long.toFixed(2);
+  });
+});
+
 
 
 function initMap() {
 
     
-  // The location of Uluru
+  // The location of Saint Paul
   var stp = {lat: 44.954, lng: -93.091};
-  // The map, centered at Uluru
+  // The map, centered at Saint Paul
   var map = new google.maps.Map(
       document.getElementById('map'), {zoom: 4, center: stp});
-  // The marker, positioned at Uluru
+  // The marker, positioned at Saint Paul
   var marker = new google.maps.Marker({position: stp, map: map});
 
 
