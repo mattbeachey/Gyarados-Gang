@@ -36,6 +36,8 @@
 
 
 </div>
+
+
     
 
 
@@ -72,6 +74,22 @@
         <button id="testingButton">See doge</button>
     </div>
 
+    <!--Get my longitude and latitude area-->
+
+<div class="longAndLat">    
+
+<p>
+  Your location is <span id="latitude">0.00</span>°
+  latitude by <span id="longitude">0.00</span>° longitude.
+</p>
+<button id="get-location">
+  Get My Location
+</button>    
+
+</div>
+
+    
+<div id="map"></div>
 
 
 
@@ -81,6 +99,7 @@
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="assets/js/script.js"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCTeE4A-78FaUSVBlEKSvpdcDqTT8eFg3E&callback=initMap"></script>
 </body>
 
 </html>
