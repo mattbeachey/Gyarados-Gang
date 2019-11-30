@@ -3,17 +3,19 @@ function initProgram() {
     let informationGathered;
     let trait = "Adventurous";
 
-    //Google Maps API Variables
 
+
+    //Google Maps API Variables
+    //May need to delete if we will not use the map
    
 
-    // const apiKey = "AIzaSyCTeE4A-78FaUSVBlEKSvpdcDqTT8eFg3E";
-    // src="https://maps.googleapis.com/maps/api/js?key=" + apiKey + "&callback=initMap"
+    const apiKey = "AIzaSyCTeE4A-78FaUSVBlEKSvpdcDqTT8eFg3E";
+    src="https://maps.googleapis.com/maps/api/js?key=" + apiKey + "&callback=initMap"
     var unirest = require("unirest");
 
     var req = unirest("GET", "https://google-maps-geocoding.p.rapidapi.com/geocode/json");
     
-    
+    //The information needed to display the map on the main page, can delete if not needed
 
     req.query({
 	"language": "en",
@@ -121,30 +123,30 @@ function initProgram() {
 
     // a series of if then statements to make sure the correct dog breed is given when a trait is received.
     //runs the get info function
-    // function applyTraitToDog() {
-    //     trait = testingSelectEl.value;
-    //     switch (trait) {
-    //         case 'Adventurous':
-    //             dogBreed = "ridgeback/rhodesian"
-    //             break;
-    //         case 'Charismatic':
-    //             dogBreed = "retriever/golden"
-    //             break;
-    //         case 'Mellow':
-    //             dogBreed = "dane/great"
-    //             break;
-    //         case 'Rational':
-    //             dogBreed = "collie/border"
-    //             break;
-    //         case 'Social':
-    //             dogBreed = "husky"
-    //             break;
-    //         case 'Thoughtful':
-    //             dogBreed = "boxer"
-    //             break;
-    //     }
-    //     getInfo();
-    // }
+    function applyTraitToDog() {
+        trait = testingSelectEl.value;
+        switch (trait) {
+            case 'Adventurous':
+                dogBreed = "ridgeback/rhodesian"
+                break;
+            case 'Charismatic':
+                dogBreed = "retriever/golden"
+                break;
+            case 'Mellow':
+                dogBreed = "dane/great"
+                break;
+            case 'Rational':
+                dogBreed = "collie/border"
+                break;
+            case 'Social':
+                dogBreed = "husky"
+                break;
+            case 'Thoughtful':
+                dogBreed = "boxer"
+                break;
+        }
+        getInfo();
+    }
 
         function applyBeerToDog() {
         trait = testingSelectEl.value;
@@ -229,6 +231,7 @@ function initProgram() {
 // initProgram();
 
 //JS for longitude and latitude, taken from https://developer.mozilla.org/en-US/docs/Web/API/Coordinates/longitude
+//Will use this function to determine the user's location and take the longitude and latitude to apply to a certain dog breed
 
 let button = document.getElementById("get-location");
 let latText = document.getElementById("latitude");
@@ -244,7 +247,7 @@ button.addEventListener("click", function() {
   });
 });
 
-
+//Function that displays the map on the page, may ultimately delete this if we deem it unnecessary
 
 function initMap() {
 
