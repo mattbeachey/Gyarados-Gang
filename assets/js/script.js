@@ -66,8 +66,7 @@ function initProgram() {
         `	Is your favorite movie Holes (2003) starring Shia LaBeouf?	`,
         `	Do you have the TV on when you’re home alone, just so it kind of feels like you’re with people because you’d get too sad otherwise?	`,
         `	Do you gain an irresistible feeling to scratch the back of your ear with your foot?	`,
-        `   Are you a good boy?`,
-        `   `]
+        `   Are you a good boy?`]
 
 
 
@@ -84,7 +83,7 @@ function initProgram() {
         moveForward();
     })
 
-    //Adds an event listener to the move forward button
+    //Adds an event listener to the start over button
     //runs the startOver function
     startOverEl.addEventListener("click", function () {
         startOver();
@@ -98,10 +97,13 @@ function initProgram() {
     //moves the dogify logo and dog image around the screen
     function moveForward() {
         spacerEl.setAttribute("class", "disappear");
+
         mainflexEl.removeAttribute("class", "mainflex");
         mainflexEl.setAttribute("class", "mainflexClick");
+
         appNameEl.removeAttribute("class", "header-big");
         appNameEl.setAttribute("class", "header-small");
+        
         dogImageEl.removeAttribute("class", "dogimage");
         dogImageEl.setAttribute("class", "dogimageSmall");
     }
@@ -191,6 +193,10 @@ function initProgram() {
         document.body.append(dogPicEl);
     }
 
+
+    //Gets the dog questions array from above
+    //shuffles it. 
+    //appends 4 of those dog questions onto the page.
     function renderDogQuestions() {
         function shuffle(a) {
             let j, x, i;
