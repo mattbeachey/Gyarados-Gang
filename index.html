@@ -20,17 +20,19 @@
         <h1 class="header-big" id="appName"> Doggify </h1>
         <img class="dogimage" id="dogImage" src="./assets/images/doggify-threshold-face-square.png">
     </div>
-    
+
 
     <div id="start" class="start-instruction">
         <p class="inherit">Welcome to Doggify!</p>
-        <p class="inherit">If you’ve answered 'yes' to any of these questions, you’re most likely canine. The real question is what kind? Take our core personality type quiz and find out what breed of furry friend you TRULY are.</p>
+        <p class="inherit">If you’ve answered 'yes' to any of these questions, you’re most likely canine. The real
+            question is what kind? Take our core personality type quiz and find out what breed of furry friend you TRULY
+            are.</p>
         <p class="inherit">Start the quiz by clicking HERE!</p>
     </div>
     <p id="dogQuestions" class="dogQ"></p>
 
 
-    
+
 
 
 
@@ -43,17 +45,22 @@
         <button id="moveForward">
             Move Forward
         </button>
-        <button id ="startOver">
+        <button id="startOver">
             Start Over
         </button>
 
 
 
 
-
+        <div>
+            <input type="city name" id="cityNameInput">
+        </div>
 
         <!-- Dropdown menu of our different personality types -->
         <select name="testingSelect" id="testingSelect">
+
+
+
             <option value="Adventurous">Adventurous</option>
             <option value="Charismatic">Charismatic</option>
             <option value="Mellow">Mellow</option>
@@ -62,26 +69,26 @@
             <option value="Social">Social</option>
             <option value="Thoughtful">Thoughtful</option>
         </select>
-        <button id="testingButton">See doge</button>
+        <button id="seeDoge">See doge</button>
     </div>
 
     <!--Get my longitude and latitude area-->
 
-<div class="longAndLat">    
+    <div class="longAndLat">
 
-<p>
-  Your location is <span id="latitude">0.00</span>°
-  latitude by <span id="longitude">0.00</span>° longitude.
-</p>
-<button id="get-location">
-  Get My Location
-</button>    
+        <p>
+              Your location is <span id="latitude">0.00</span>°
+              latitude by <span id="longitude">0.00</span>° longitude.
+        </p>
+        <button id="get-location">
+              Get My Location
+        </button>
 
-</div>
+    </div>
 
-<!--Map displays here, using Google Maps API-->
-    
-<div id="map"></div>
+    <!--Map displays here, using Google Maps API-->
+
+    <div id="map"></div>
 
 
 
@@ -91,7 +98,7 @@
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="assets/js/script.js"></script>
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCTeE4A-78FaUSVBlEKSvpdcDqTT8eFg3E&callback=initMap"></script>
+    <!-- <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCTeE4A-78FaUSVBlEKSvpdcDqTT8eFg3E&callback=initMap"></script> -->
 </body>
 
 </html>
