@@ -58,6 +58,7 @@ body {
   width: 250px;
   transition: 1s;
 }
+
 .dogimageResults {
   position: absolute;
   justify-content: center;
@@ -98,6 +99,11 @@ body {
 .disappear {
   height: 0px;
   transition: 1s;
+  font-size: 0px;
+}
+
+.inherit{
+  font-size: inherit;
 }
 
 .mainflexResults {
@@ -114,6 +120,7 @@ body {
   width: 50%;
   position: absolute;
   top: 40%;
+  transition: 1s;
 }
 
 p {
@@ -124,6 +131,12 @@ p {
   font-size: 20px;
   margin: 16px;
 }
+
+.dogQ{
+  margin-top:200px;
+  transition: 1s;
+}
+
 
 .dogQ0,
 .dogQ1,
