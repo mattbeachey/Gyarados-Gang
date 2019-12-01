@@ -13,6 +13,7 @@ function initProgram() {
     const spacerEl = document.getElementById("spacer");
     const dogImageEl = document.getElementById("dogImage");
     const startOverEl = document.getElementById("startOver");
+    const resultsPageEl = document.getElementById("resultspage");
     const dogquestionsEl = document.getElementById("dogQuestions")
     const dogQuestions = [`	Have you ever used the snapchat dog filter and thought 'man, I wish I really did look this cute?'	`,
         `	Have you ever looked at a can of Alpo and thought, 'These savory chunks? This is better than what I normally eat!'	`,
@@ -82,6 +83,10 @@ function initProgram() {
         startOver();
     })
 
+    resultsPageEl.addEventListener("click", function(){
+        resultsPage();
+    })
+
 
     //moves the dogify logo and dog image around the screen
     //hides the opening text
@@ -97,8 +102,8 @@ function initProgram() {
         dogImageEl.removeAttribute("class", "dogimage");
         dogImageEl.setAttribute("class", "dogimageSmall");
 
-        startEl.removeAttribute("class", "start-instruction");
-        startEl.setAttribute("class", "disappear");
+        startEl.removeAttribute("class", "disappear");
+        startEl.setAttribute("class", "start-instruction");
 
         dogquestionsEl.removeAttribute("class", "dogQ")
         dogquestionsEl.setAttribute("class", "disappear")
@@ -118,13 +123,31 @@ function initProgram() {
         dogImageEl.removeAttribute("class", "dogimageSmall");
         dogImageEl.setAttribute("class", "dogimage");
 
-        startEl.removeAttribute("class", "disappear");
-        startEl.setAttribute("class", "start-instruction");
+        startEl.removeAttribute("class", "start-instruction");
+        startEl.setAttribute("class",  "disappear");
 
         dogquestionsEl.removeAttribute("class", "disappear")
         dogquestionsEl.setAttribute("class", "dogQ")
 
         renderDogQuestions();
+    }
+
+    function resultsPage(){
+        dogImageEl.setAttribute("src", "./assets/images/doggify-threshold-face-2.png");
+        dogImageEl.setAttribute("class", "dogimageResults");
+
+        appNameEl.setAttribute("class", "header-big-results");
+        appNameEl.innerText = `
+        Your 
+            Results!
+        `
+
+        mainflexEl.setAttribute("class", "mainflexResults");
+
+        spacerEl.setAttribute("class", "spacer");   
+
+        dogquestionsEl.removeAttribute("class", "dogQ")
+        dogquestionsEl.setAttribute("class", "disappear")
     }
 
     // a series of if then statements to make sure the correct dog breed is given when a trait is received.
