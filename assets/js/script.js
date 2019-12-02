@@ -143,6 +143,7 @@ function initProgram() {
             renderQuizQuestions();
         } else {
             reviewTest();
+            resultsPage();
         }
     }
 
@@ -201,7 +202,7 @@ function initProgram() {
         dogquestionsEl.removeAttribute("class", "dogQ")
         dogquestionsEl.setAttribute("class", "disappear")
 
-        startEl.setAttribute("class", "disappear");
+        quizBodyEl.setAttribute("class", "disappear");
     }
 
     //sorts the personality score.
