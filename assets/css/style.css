@@ -70,7 +70,7 @@ body {
   width: 500px;
   opacity: 0.3;
   z-index: 1;
-  transform: all 1s;
+  transition: all 1s;
 }
 
 .mainflex {
@@ -103,6 +103,7 @@ body {
 
 .disappear {
   height: 0px;
+  width: 0px;
   transition: 1s;
   font-size: 0px;
 }
