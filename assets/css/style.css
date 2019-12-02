@@ -24,7 +24,6 @@ body {
   color: #fde24a;
   font-size: 90px;
   font-family: "Calistoga";
-  transition: 1s;
   white-space: pre;
   text-align: center;
   position: relative;
@@ -32,6 +31,7 @@ body {
   -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: #c4a600;
   z-index: 2;
+  transition: all 1s;
   /* text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000; */
 }
 
@@ -66,6 +66,7 @@ body {
   width: 500px;
   opacity: 0.3;
   z-index: 1;
+  transform: all 1s;
 }
 
 .mainflex {
@@ -111,6 +112,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: all 1s;
   /* border: 2px solid black; */
 }
 
@@ -143,7 +145,8 @@ p {
 .dogQ2,
 .dogQ3 {
   /* background-color: aqua; */
-  white-space: pre;
+  max-width: 500px;
+  overflow-wrap: break-word;
 }
 
 @media screen and (max-width: 992px) {
