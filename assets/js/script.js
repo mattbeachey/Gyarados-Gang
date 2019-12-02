@@ -15,6 +15,7 @@ function initProgram() {
     const spacerEl = document.getElementById("spacer");
     const dogImageEl = document.getElementById("dogImage");
     const startOverEl = document.getElementById("startOver");
+    const resultsPageEl = document.getElementById("resultspage");
     const dogquestionsEl = document.getElementById("dogQuestions")
     const cityNameInputEl = document.getElementById("cityNameInput")
 
@@ -218,6 +219,17 @@ function initProgram() {
         moveForward();
     })
 
+    //Adds an event listener to the start over button
+    //runs the startOver function
+    startOverEl.addEventListener("click", function () {
+        startOver();
+    })
+
+    resultsPageEl.addEventListener("click", function(){
+        resultsPage();
+    })
+
+
     //moves the dogify logo and dog image around the screen
     //hides the opening text
     function moveForward() {
@@ -232,8 +244,8 @@ function initProgram() {
         dogImageEl.removeAttribute("class", "dogimage");
         dogImageEl.setAttribute("class", "dogimageSmall");
 
-        startEl.removeAttribute("class", "start-instruction");
-        startEl.setAttribute("class", "disappear");
+        startEl.removeAttribute("class", "disappear");
+        startEl.setAttribute("class", "start-instruction");
 
         dogquestionsEl.removeAttribute("class", "dogQ")
         dogquestionsEl.setAttribute("class", "disappear")
@@ -265,21 +277,46 @@ function initProgram() {
         spacerEl.setAttribute("class", "spacer");
 
         mainflexEl.removeAttribute("class", "mainflexClick");
+        mainflexEl.removeAttribute("class", "mainflexResults");
         mainflexEl.setAttribute("class", "mainflex");
 
         appNameEl.removeAttribute("class", "header-small");
+        appNameEl.removeAttribute("class", "header-big-results");
         appNameEl.setAttribute("class", "header-big");
+        appNameEl.innerText = "Doggify"
 
         dogImageEl.removeAttribute("class", "dogimageSmall");
+        dogImageEl.removeAttribute("dogimageResults")
         dogImageEl.setAttribute("class", "dogimage");
+        dogImageEl.setAttribute("src", "./assets/images/doggify-threshold-face-square.png")
 
-        startEl.removeAttribute("class", "disappear");
-        startEl.setAttribute("class", "start-instruction");
+        startEl.removeAttribute("class", "start-instruction");
+        startEl.setAttribute("class",  "disappear");
 
         dogquestionsEl.removeAttribute("class", "disappear")
         dogquestionsEl.setAttribute("class", "dogQ")
 
         renderDogQuestions();
+    }
+
+    function resultsPage(){
+        dogImageEl.setAttribute("src", "./assets/images/doggify-threshold-face-2.png");
+        dogImageEl.setAttribute("class", "dogimageResults");
+
+        appNameEl.setAttribute("class", "header-big-results");
+        appNameEl.innerText = `
+        Your 
+            Results!
+        `
+
+        mainflexEl.setAttribute("class", "mainflexResults");
+
+        spacerEl.setAttribute("class", "spacer");   
+
+        dogquestionsEl.removeAttribute("class", "dogQ")
+        dogquestionsEl.setAttribute("class", "disappear")
+
+        startEl.setAttribute("class",  "disappear");
     }
 
 

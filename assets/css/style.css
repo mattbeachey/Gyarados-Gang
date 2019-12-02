@@ -93,7 +93,7 @@ body {
 }
 
 .testing-realm {
-  margin-top: 200px;
+  /* margin-top: 200px; */
 }
 
 .disappear {
@@ -133,7 +133,7 @@ p {
 }
 
 .dogQ{
-  margin-top:200px;
+  /* margin-top:200px; */
   transition: 1s;
 }
 
