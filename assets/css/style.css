@@ -258,5 +258,8 @@ left: 57%;
   width: 0px;
   transition: 1s;
   font-size: 0px;
-  
+}
+
+.answer:hover {
+  background-color: #fde24a;
 }
