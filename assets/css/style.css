@@ -262,4 +262,5 @@ left: 57%;
 
 .answer:hover {
   background-color: #fde24a;
+  user-select: none;
 }
