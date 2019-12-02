@@ -7,6 +7,10 @@ body {
   align-items: center;
 }
 
+/* div {
+  border: 2px solid black;
+} */
+
 .spacer {
   width: 100%;
   height: 100px;
@@ -125,9 +129,11 @@ body {
   transition: 1s;
 }
 
+
+
 p {
   text-align: center;
-  font-family: "Roboto";
+  font-family: 'Solway', serif;
   color: black;
   font-weight: bolder;
   font-size: 20px;
@@ -139,6 +145,19 @@ p {
   transition: 1s;
 }
 
+.dogQuestionBox {
+  /* background-color: rgba(255, 105, 180, 0.589);
+  transform: skew(20deg); */
+  width: 80%;
+  /* height: 500px; */
+  text-align: center;
+  color: black;
+  font-weight: bolder;
+  font-size: 19px;
+  margin: 16px;
+  transform: all 1s;
+}
+
 
 .dogQ0,
 .dogQ1,
@@ -147,6 +166,50 @@ p {
   /* background-color: aqua; */
   max-width: 500px;
   overflow-wrap: break-word;
+}
+
+.dogQ0 {
+transform: rotate(6deg);
+position: relative;
+top: 20%;
+left: -3%;
+}
+
+.dogQ1 {
+transform: rotate(-6deg);
+position: relative;
+top: 20%;
+left: 57%;
+}
+
+.dogQ2 {
+transform: rotate(6deg);
+position: relative;
+top: 20%;
+left: -3%;
+}
+
+.dogQ3 {
+transform: rotate(-6deg);
+position: relative;
+top: 20%;
+left: 57%;
+}
+
+.yes-button{
+  border: 2px solid black;
+  border-radius: 10px;
+  background-color: transparent;
+  font-family: 'Solway', serif;
+  color: black;
+  font-weight: bolder;
+  font-size: 40px;
+}
+
+.yes-button:hover {
+  background-color: #e6f1b1;
+  color: #747c50;
+  border: 2px solid #747c50;
 }
 
 @media screen and (max-width: 992px) {
@@ -165,6 +228,14 @@ p {
     width: 75%;
     position: absolute;
     top: 40%;
+  }
+  .dogQ0,
+  .dogQ1,
+  .dogQ2,
+  .dogQ3 {
+    position: relative;
+    left: 0%;
+    transform: rotate(0deg);
   }
 }
 

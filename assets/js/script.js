@@ -18,6 +18,7 @@ function initProgram() {
     const resultsPageEl = document.getElementById("resultspage");
     const dogquestionsEl = document.getElementById("dogQuestions")
     const cityNameInputEl = document.getElementById("cityNameInput")
+    const yesButton = document.getElementById("yesButton")
 
     //Arrays
     const dogQuestions = [`	Have you ever used the snapchat dog filter and thought 'man, I wish I really did look this cute?'`,
@@ -218,6 +219,9 @@ function initProgram() {
     moveForwardButtonEl.addEventListener("click", function () {
         moveForward();
     })
+    yesButton.addEventListener("click", function () {
+        moveForward();
+    })
 
     //Adds an event listener to the start over button
     //runs the startOver function
@@ -249,6 +253,8 @@ function initProgram() {
 
         dogquestionsEl.removeAttribute("class", "dogQ")
         dogquestionsEl.setAttribute("class", "disappear")
+
+        yesButton.parentNode.removeChild(yesButton)
     }
 
 
@@ -306,7 +312,7 @@ function initProgram() {
         appNameEl.setAttribute("class", "header-big-results");
         appNameEl.innerText = `
         Your 
-            Results!
+            Results
         `
 
         mainflexEl.setAttribute("class", "mainflexResults");
