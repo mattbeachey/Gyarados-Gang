@@ -14,6 +14,7 @@ function initProgram() {
     const appNameEl = document.getElementById("appName");
     const spacerEl = document.getElementById("spacer");
     const dogImageEl = document.getElementById("dogImage");
+    const dogImage2El = document.getElementById("dogImage2")
     const startOverEl = document.getElementById("startOver");
     const resultsPageEl = document.getElementById("resultspage");
     const dogquestionsEl = document.getElementById("dogQuestions")
@@ -157,9 +158,7 @@ function initProgram() {
         renderDogQuestions();
     }
 
-
-
-
+    
 
     //adds an event listener to results page button
     //runs the resultsPage function
@@ -169,8 +168,9 @@ function initProgram() {
 
 
     function resultsPage() {
-        dogImageEl.setAttribute("src", "./assets/images/doggify-threshold-face-2.png");
-        dogImageEl.setAttribute("class", "dogimageResults");
+        dogImageEl.setAttribute("class", "disappear");
+        dogImage2El.removeAttribute("class", "disappear")
+        dogImage2El.setAttribute("class", "dogimageResults")
 
         appNameEl.setAttribute("class", "header-big-results");
         appNameEl.innerText = `
