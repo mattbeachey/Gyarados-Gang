@@ -70,7 +70,7 @@ body {
   width: 500px;
   opacity: 0.3;
   z-index: 1;
-  transform: all 1s;
+  transition: all 1s;
 }
 
 .mainflex {
@@ -103,6 +103,7 @@ body {
 
 .disappear {
   height: 0px;
+  width: 0px;
   transition: 1s;
   font-size: 0px;
 }
@@ -243,3 +244,18 @@ left: 57%;
   height: 400px; /* The height is 400 pixels */
   width: 100%; /* The width is the width of the web page */
 }
+
+.quiz {
+    background-color: rgba(255, 255, 255, 0.664);
+    border-radius: 16px;
+    width: 50%;
+    position: absolute;
+    top: 40%;
+    transition: 1s;
+    padding: 2%;
+    font-family: 'Solway', serif;
+    color: black;
+    font-weight: bolder;
+    font-size: 20px;
+    margin: 16px;
+  }

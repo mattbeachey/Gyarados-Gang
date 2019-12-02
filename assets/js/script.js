@@ -5,24 +5,8 @@ function initProgram() {
     let cityName;
     let weatherInfo;
     let trait;
-    let personalityScore = [
-        {
-            trait: "adventurous",
-            score: 0,
-        },
-        {
-            trait: "mellow",
-            score: 0,
-        },
-        {
-            trait: "rational",
-            score: 0,
-        },
-        {
-            trait: "social",
-            score: 0,
-        },
-    ]
+    let currentQuestion = 0;
+    
 
 
     //Buttons on the document.
@@ -34,6 +18,7 @@ function initProgram() {
     const appNameEl = document.getElementById("appName");
     const spacerEl = document.getElementById("spacer");
     const dogImageEl = document.getElementById("dogImage");
+    const dogImage2El = document.getElementById("dogImage2")
     const startOverEl = document.getElementById("startOver");
     const resultsPageEl = document.getElementById("resultspage");
     const dogquestionsEl = document.getElementById("dogQuestions")
@@ -41,6 +26,11 @@ function initProgram() {
     const chosenCityEl = document.getElementById("chosenCity");
     const todayWeatherEl = document.getElementById("todayWeather");
     const temperatureEl = document.getElementById("temperatureWeather");
+    const quizQuestionEl = document.getElementById("quizQuestion");
+    const answerAEl = document.getElementById("answerA");
+    const answerBEl = document.getElementById("answerB");
+    const answerCEl = document.getElementById("answerC");
+    const answerDEl = document.getElementById("answerD");
 
     //Gets the dog questions array from above
     //shuffles it. 
@@ -104,11 +94,44 @@ function initProgram() {
         yesButton.parentNode.removeChild(yesButton)
     }
 
+    answerAEl.addEventListener("click", function () {
+        arrayQuestions[currentQuestion].answerA[1]();
+        checkGameProgress();
+    })
 
+    answerBEl.addEventListener("click", function () {
+        arrayQuestions[currentQuestion].answerB[1]();
+        checkGameProgress();
+    })
 
+    answerCEl.addEventListener("click", function () {
+        arrayQuestions[currentQuestion].answerC[1]();
+        checkGameProgress();
 
+    })
 
+    answerDEl.addEventListener("click", function () {
+        arrayQuestions[currentQuestion].answerD[1]();
+        checkGameProgress();
+    })
 
+    function renderQuizQuestions() {
+        console.log(personalityScore);
+        quizQuestionEl.innerText = arrayQuestions[currentQuestion].question;
+        answerAEl.innerText = arrayQuestions[currentQuestion].answerA[0];
+        answerBEl.innerText = arrayQuestions[currentQuestion].answerB[0];
+        answerCEl.innerText = arrayQuestions[currentQuestion].answerC[0];
+        answerDEl.innerText = arrayQuestions[currentQuestion].answerD[0];
+    } renderQuizQuestions();
+    
+    function checkGameProgress() {
+        currentQuestion = currentQuestion + 1;
+        if (currentQuestion < arrayQuestions.length) {
+            renderQuizQuestions();
+        } else {
+            reviewTest();
+        }
+    }
 
 
 
@@ -154,8 +177,6 @@ function initProgram() {
 
 
 
-
-
     //adds an event listener to results page button
     //runs the resultsPage function
     resultsPageEl.addEventListener("click", function () {
@@ -164,8 +185,9 @@ function initProgram() {
 
 
     function resultsPage() {
-        dogImageEl.setAttribute("src", "./assets/images/doggify-threshold-face-2.png");
-        dogImageEl.setAttribute("class", "dogimageResults");
+        dogImageEl.setAttribute("class", "disappear");
+        dogImage2El.removeAttribute("class", "disappear")
+        dogImage2El.setAttribute("class", "dogimageResults")
 
         appNameEl.setAttribute("class", "header-big-results");
         appNameEl.innerText = `
@@ -188,7 +210,9 @@ function initProgram() {
         personalityScore.sort(function (a, b) {
             return b.score - a.score;
         })
-        applyTraitToDogAndCity;
+        console.log(personalityScore);
+        trait = personalityScore[0].trait;
+        applyTraitToDogAndCity();
     }
 
 
@@ -198,7 +222,6 @@ function initProgram() {
     //runs the getWeatherInfo function
     //We will use this once the quiz is done
     function applyTraitToDogAndCity() {
-        trait = testingSelectEl.value;
         switch (trait) {
             case 'adventurous':
                 dogBreed = "vizsla";
@@ -217,7 +240,7 @@ function initProgram() {
                 cityName = "new%20orleans";
                 break;
         }
-            getWeatherInfo();
+        getWeatherInfo();
     }
 
 
@@ -256,7 +279,7 @@ function initProgram() {
     function renderWeather() {
         chosenCityEl.innerText = weatherInfo.city.name;
         todayWeatherEl.innerText = weatherInfo.list[0].weather[0].description;
-        temperatureEl.innerText = getFahrenheit(weatherInfo.list[0].main.temp);
+        temperatureEl.innerText = getFahrenheit(weatherInfo.list[0].main.temp)+" ℉";
         getDogInfo();
     }
 
