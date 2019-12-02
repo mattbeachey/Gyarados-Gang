@@ -2,8 +2,8 @@ function initProgram() {
     let dogBreed;
     let dogInformationGathered;
     let cityName;
-    let longitudeInfo;
-    // let trait = "Adventurous";
+    let weatherInfo;
+    let trait;
 
     //Buttons on the document.
     const testingSelectEl = document.getElementById("testingSelect");
@@ -14,11 +14,14 @@ function initProgram() {
     const appNameEl = document.getElementById("appName");
     const spacerEl = document.getElementById("spacer");
     const dogImageEl = document.getElementById("dogImage");
+    const dogImage2El = document.getElementById("dogImage2")
     const startOverEl = document.getElementById("startOver");
     const resultsPageEl = document.getElementById("resultspage");
     const dogquestionsEl = document.getElementById("dogQuestions")
-    const cityNameInputEl = document.getElementById("cityNameInput")
     const yesButton = document.getElementById("yesButton")
+    const chosenCityEl = document.getElementById("chosenCity");
+    const todayWeatherEl = document.getElementById("todayWeather");
+    const temperatureEl = document.getElementById("temperatureWeather");
 
     //Arrays
     const dogQuestions = [`	Have you ever used the snapchat dog filter and thought 'man, I wish I really did look this cute?'`,
@@ -40,142 +43,7 @@ function initProgram() {
         `Do you have the TV on when you’re home alone, just so it kind of feels like you’re with people because you’d get too sad otherwise?`,
         `Do you gain an irresistible feeling to scratch the back of your ear with your foot?`,
         `Are you a good boy?`]
-    const dogBreedsArray = ['affenpinscher',
-        'african',
-        'airedale',
-        'akita',
-        'appenzeller',
-        'basenji',
-        'beagle',
-        'bluetick',
-        'borzoi',
-        'bouvier',
-        'boxer',
-        'brabancon',
-        'briard',
-        'buhund/norwegian',
-        'bulldog/boston',
-        'bulldog/english',
-        'bulldog/french',
-        'bullterrier/staffordshire',
-        'cairn',
-        'cattledog/australian',
-        'chihuahua',
-        'chow',
-        'clumber',
-        'cockapoo',
-        'collie/border',
-        'coonhound',
-        'corgi/cardigan',
-        'cotondetulear',
-        'dachshund',
-        'dalmatian',
-        'dane/great',
-        'deerhound/scottish',
-        'dhole',
-        'dingo',
-        'doberman',
-        'elkhound/norwegian',
-        'entlebucher',
-        'eskimo',
-        'frise/bichon',
-        'germanshepherd',
-        'greyhound/italian',
-        'groenendael',
-        'hound/afghan',
-        'hound/basset',
-        'hound/blood',
-        'hound/english',
-        'hound/ibizan',
-        'hound/walker',
-        'husky',
-        'keeshond',
-        'kelpie',
-        'komondor',
-        'kuvasz',
-        'labrador',
-        'leonberg',
-        'lhasa',
-        'malamute',
-        'malinois',
-        'maltese',
-        'mastiff/bull',
-        'mastiff/english',
-        'mastiff/tibetan',
-        'mexicanhairless',
-        'mix',
-        'mountain/bernese',
-        'mountain/swiss',
-        'newfoundland',
-        'otterhound',
-        'papillon',
-        'pekinese',
-        'pembroke',
-        'pinscher/miniature',
-        'pitbull',
-        'pointer/german',
-        'pointer/germanlonghair',
-        'pomeranian',
-        'poodle/miniature',
-        'poodle/standard',
-        'poodle/toy',
-        'pug',
-        'puggle',
-        'pyrenees',
-        'redbone',
-        'retriever/chesapeake',
-        'retriever/curly',
-        'retriever/flatcoated',
-        'retriever/golden',
-        'ridgeback/rhodesian',
-        'rottweiler',
-        'saluki',
-        'samoyed',
-        'schipperke',
-        'schnauzer/giant',
-        'schnauzer/miniature',
-        'setter/english',
-        'setter/gordon',
-        'setter/irish',
-        'sheepdog/english',
-        'sheepdog/shetland',
-        'shiba',
-        'shihtzu',
-        'spaniel/blenheim',
-        'spaniel/brittany',
-        'spaniel/cocker',
-        'spaniel/irish',
-        'spaniel/japanese',
-        'spaniel/sussex',
-        'spaniel/welsh',
-        'springer/english',
-        'stbernard',
-        'terrier/american',
-        'terrier/australian',
-        'terrier/bedlington',
-        'terrier/border',
-        'terrier/dandie',
-        'terrier/fox',
-        'terrier/irish',
-        'terrier/kerryblue',
-        'terrier/lakeland',
-        'terrier/norfolk',
-        'terrier/norwich',
-        'terrier/patterdale',
-        'terrier/russell',
-        'terrier/scottish',
-        'terrier/sealyham',
-        'terrier/silky',
-        'terrier/tibetan',
-        'terrier/toy',
-        'terrier/westhighland',
-        'terrier/wheaten',
-        'terrier/yorkshire',
-        'vizsla',
-        'waterdog/spanish',
-        'weimaraner',
-        'whippet',
-        'wolfhound/irish',]
+
 
     //Gets the dog questions array from above
     //shuffles it. 
@@ -208,29 +76,14 @@ function initProgram() {
 
 
 
-
-
-
-
-
-
     //Adds an event listener to the move forward button
     //runs the moveForward function
     moveForwardButtonEl.addEventListener("click", function () {
         moveForward();
     })
+
     yesButton.addEventListener("click", function () {
         moveForward();
-    })
-
-    //Adds an event listener to the start over button
-    //runs the startOver function
-    startOverEl.addEventListener("click", function () {
-        startOver();
-    })
-
-    resultsPageEl.addEventListener("click", function(){
-        resultsPage();
     })
 
 
@@ -297,7 +150,7 @@ function initProgram() {
         dogImageEl.setAttribute("src", "./assets/images/doggify-threshold-face-square.png")
 
         startEl.removeAttribute("class", "start-instruction");
-        startEl.setAttribute("class",  "disappear");
+        startEl.setAttribute("class", "disappear");
 
         dogquestionsEl.removeAttribute("class", "disappear")
         dogquestionsEl.setAttribute("class", "dogQ")
@@ -305,9 +158,19 @@ function initProgram() {
         renderDogQuestions();
     }
 
-    function resultsPage(){
-        dogImageEl.setAttribute("src", "./assets/images/doggify-threshold-face-2.png");
-        dogImageEl.setAttribute("class", "dogimageResults");
+    
+
+    //adds an event listener to results page button
+    //runs the resultsPage function
+    resultsPageEl.addEventListener("click", function () {
+        resultsPage();
+    })
+
+
+    function resultsPage() {
+        dogImageEl.setAttribute("class", "disappear");
+        dogImage2El.removeAttribute("class", "disappear")
+        dogImage2El.setAttribute("class", "dogimageResults")
 
         appNameEl.setAttribute("class", "header-big-results");
         appNameEl.innerText = `
@@ -317,12 +180,12 @@ function initProgram() {
 
         mainflexEl.setAttribute("class", "mainflexResults");
 
-        spacerEl.setAttribute("class", "spacer");   
+        spacerEl.setAttribute("class", "spacer");
 
         dogquestionsEl.removeAttribute("class", "dogQ")
         dogquestionsEl.setAttribute("class", "disappear")
 
-        startEl.setAttribute("class",  "disappear");
+        startEl.setAttribute("class", "disappear");
     }
 
 
@@ -330,41 +193,74 @@ function initProgram() {
 
 
 
-
-
+    // a series of if then statements to make sure the correct dog breed is given when a trait is received.
+    //runs the getDogInfo function
+    //runs the getWeatherInfo function
+    //We will use this once the quiz is done
+    function applyTraitToDogAndCity() {
+        trait = testingSelectEl.value;
+        switch (trait) {
+            case 'Adventurous':
+                dogBreed = "vizsla";
+                cityName = "Longyearbyen";
+                break;
+            case 'Mellow':
+                dogBreed = "dane/great";
+                cityName = "Kennebunkport";
+                break;
+            case 'Rational':
+                dogBreed = "collie/border"
+                cityName = "new%20york";
+                break;
+            case 'Social':
+                dogBreed = "retriever/golden"
+                cityName = "new%20orleans";
+                break;
+        }
+        getDogInfo();
+        getWeatherInfo();
+    }
 
 
 
 
     //Adds an event listener to the button for testing
     //chages cityName to the name in the cityNameInputEl
-    //runs the getCoordinates function
+    //runs the getWeatherInfo function
     seeDogeButtonEl.addEventListener("click", function () {
-        cityName = cityNameInputEl.value;
-        getCoordinates();
+        applyTraitToDogAndCity();
     }
     )
 
 
-
-
     //Runs the weather API to get the longitude the cityName
     //Runs the getDogInfoFunction
-    function getCoordinates() {
+    function getWeatherInfo() {
         const apiKey = "201eb0ee5ccf4e9d19410ecb6a7d9eba"
         const queryURL = "https://api.openweathermap.org/data/2.5/forecast?q=";
 
         axios.get(queryURL + cityName + '&appid=' + apiKey)
             .then(function (response) {
-                longitudeInfo = response.data.city.coord.lon;
-                getDogInfo();
+                weatherInfo = response.data
+                renderWeather();
             }
             )
     }
 
+    //takes the value of the temperature in kelvins and returns in Fahrenheit
+    function getFahrenheit(k) {
+        return Math.floor((k - 273.15) * 1.8000 + 32.00);
+    }
+
+    //
+    function renderWeather() {
+        chosenCityEl.innerText = weatherInfo.city.name;
+        todayWeatherEl.innerText = weatherInfo.list[0].weather[0].description;
+        temperatureEl.innerText = getFahrenheit(weatherInfo.list[0].main.temp);
+    }
+
     //Selects the dogBreed by referencing the longitud
     function getDogInfo() {
-        dogBreed = dogBreedsArray[Math.abs(Math.floor(longitudeInfo * dogBreedsArray.length / 180))];
         const queryURL = "https://dog.ceo/api/breed/" + dogBreed + "/images/random"
         axios.get(queryURL)
             .then(function (response) {
@@ -373,6 +269,8 @@ function initProgram() {
             }
             )
     }
+
+
 
     //takes the information held in the "dogInformationGathered" variable
     //creates an element with the image tag
@@ -400,33 +298,6 @@ function initProgram() {
 
 
 
-    // a series of if then statements to make sure the correct dog breed is given when a trait is received.
-    //runs the get info function
-    //We will use this once the quiz is done.
-    function applyTraitToDog() {
-        trait = testingSelectEl.value;
-        switch (trait) {
-            case 'Adventurous':
-                dogBreed = "ridgeback/rhodesian"
-                break;
-            case 'Charismatic':
-                dogBreed = "retriever/golden"
-                break;
-            case 'Mellow':
-                dogBreed = "dane/great"
-                break;
-            case 'Rational':
-                dogBreed = "collie/border"
-                break;
-            case 'Social':
-                dogBreed = "husky"
-                break;
-            case 'Thoughtful':
-                dogBreed = "boxer"
-                break;
-        }
-        getDogInfo();
-    }
 
 
 } initProgram();
@@ -509,8 +380,6 @@ function mapAPIStuff() {
 
         console.log(res.body);
     });
-
-
 
 }
 
