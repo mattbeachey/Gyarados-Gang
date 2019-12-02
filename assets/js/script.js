@@ -6,7 +6,7 @@ function initProgram() {
     let weatherInfo;
     let trait;
     let currentQuestion = 0;
-    
+
 
 
     //Buttons on the document.
@@ -22,7 +22,7 @@ function initProgram() {
     const startOverEl = document.getElementById("startOver");
     const resultsPageEl = document.getElementById("resultspage");
     const dogquestionsEl = document.getElementById("dogQuestions")
-    const yesButton = document.getElementById("yesButton")
+    const yesButtonEl = document.getElementById("yesButton")
     const chosenCityEl = document.getElementById("chosenCity");
     const todayWeatherEl = document.getElementById("todayWeather");
     const temperatureEl = document.getElementById("temperatureWeather");
@@ -31,6 +31,7 @@ function initProgram() {
     const answerBEl = document.getElementById("answerB");
     const answerCEl = document.getElementById("answerC");
     const answerDEl = document.getElementById("answerD");
+    const quizBodyEl = document.getElementById("quizBody");
 
     //Gets the dog questions array from above
     //shuffles it. 
@@ -46,16 +47,11 @@ function initProgram() {
                 a[j] = x;
             }
         } shuffle(dogQuestions)
-
         for (let i = 0; i < 4; i++) {
             $("#dogQuestions").append(
-
-
                 `
-                <p class="dogQ`+ i + ` inherit">` + dogQuestions[i] + `</p>
+                <p class="dogQ` + i + ` inherit">` + dogQuestions[i] + `</p>
                 `
-
-
             )
         }
     } renderDogQuestions();
@@ -66,6 +62,8 @@ function initProgram() {
         moveForward();
     })
 
+    //Adds an event listener to the yes button
+    //runs the moveForward function
     yesButton.addEventListener("click", function () {
         moveForward();
     })
@@ -91,30 +89,50 @@ function initProgram() {
         dogquestionsEl.removeAttribute("class", "dogQ")
         dogquestionsEl.setAttribute("class", "disappear")
 
-        yesButton.parentNode.removeChild(yesButton)
+        yesButtonEl.removeAttribute("class", "yes-button")
+        yesButtonEl.setAttribute("class", "disappear")
     }
 
+    //Adds an event listener to the startquiz button
+    //runs the startQuiz function
+    startEl.addEventListener("click", function () {
+        startQuiz();
+
+    });
+
+    //the white block that come after move forward disappears
+    //then quiz appears
+    function startQuiz() {
+        startEl.setAttribute("class", "disappear");
+        quizBodyEl.removeAttribute("class", "disapper");
+        quizBodyEl.setAttribute("class", "quiz");
+        console.log(answerAEl)
+    }
+
+    //Event listeners on the quiz answers that move through the quiz
+    //When clicked runs the method that increases score
+    //Runs the checkGameProgress function
     answerAEl.addEventListener("click", function () {
         arrayQuestions[currentQuestion].answerA[1]();
         checkGameProgress();
     })
-
     answerBEl.addEventListener("click", function () {
         arrayQuestions[currentQuestion].answerB[1]();
         checkGameProgress();
     })
-
     answerCEl.addEventListener("click", function () {
         arrayQuestions[currentQuestion].answerC[1]();
         checkGameProgress();
 
     })
-
     answerDEl.addEventListener("click", function () {
         arrayQuestions[currentQuestion].answerD[1]();
         checkGameProgress();
     })
 
+
+
+    //Renders the quiz questions
     function renderQuizQuestions() {
         console.log(personalityScore);
         quizQuestionEl.innerText = arrayQuestions[currentQuestion].question;
@@ -123,7 +141,11 @@ function initProgram() {
         answerCEl.innerText = arrayQuestions[currentQuestion].answerC[0];
         answerDEl.innerText = arrayQuestions[currentQuestion].answerD[0];
     } renderQuizQuestions();
-    
+
+
+    //checks to see if there are more quiz questions
+    //if there are more it runs the renderQuizQuestions function.
+    //if not it runs the reviewTest function.
     function checkGameProgress() {
         currentQuestion = currentQuestion + 1;
         if (currentQuestion < arrayQuestions.length) {
@@ -134,18 +156,11 @@ function initProgram() {
     }
 
 
-
-
-
-
-
-
     //Adds an event listener to the start over button
     //runs the startOver function
     startOverEl.addEventListener("click", function () {
         startOver();
-    })
-
+    });
 
     //moves the dogify logo and dog image back to the start
     //brings back the the opening text
@@ -159,35 +174,37 @@ function initProgram() {
         appNameEl.removeAttribute("class", "header-small");
         appNameEl.removeAttribute("class", "header-big-results");
         appNameEl.setAttribute("class", "header-big");
-        appNameEl.innerText = "Doggify"
+        appNameEl.innerText = "Doggify";
 
         dogImageEl.removeAttribute("class", "dogimageSmall");
-        dogImageEl.removeAttribute("dogimageResults")
+        dogImageEl.removeAttribute("dogimageResults");
         dogImageEl.setAttribute("class", "dogimage");
-        dogImageEl.setAttribute("src", "./assets/images/doggify-threshold-face-square.png")
+        dogImageEl.setAttribute(
+            "src",
+            "./assets/images/doggify-threshold-face-square.png"
+        );
 
         startEl.removeAttribute("class", "start-instruction");
         startEl.setAttribute("class", "disappear");
 
-        dogquestionsEl.removeAttribute("class", "disappear")
-        dogquestionsEl.setAttribute("class", "dogQ")
+        dogquestionsEl.removeAttribute("class", "disappear");
+        dogquestionsEl.setAttribute("class", "dogQ");
 
         renderDogQuestions();
     }
-
-
 
     //adds an event listener to results page button
     //runs the resultsPage function
     resultsPageEl.addEventListener("click", function () {
         resultsPage();
-    })
+    });
 
-
+    //brings up other dog image
+    //
     function resultsPage() {
         dogImageEl.setAttribute("class", "disappear");
-        dogImage2El.removeAttribute("class", "disappear")
-        dogImage2El.setAttribute("class", "dogimageResults")
+        dogImage2El.removeAttribute("class", "disappear");
+        dogImage2El.setAttribute("class", "dogimageResults");
 
         appNameEl.setAttribute("class", "header-big-results");
         appNameEl.innerText = `
@@ -205,12 +222,13 @@ function initProgram() {
         startEl.setAttribute("class", "disappear");
     }
 
-
+    //sorts the personality score.
+    //sets the trait to the highest score.
+    //runs the applyTraitToDogAndCity function.
     function reviewTest() {
         personalityScore.sort(function (a, b) {
             return b.score - a.score;
         })
-        console.log(personalityScore);
         trait = personalityScore[0].trait;
         applyTraitToDogAndCity();
     }
@@ -279,7 +297,7 @@ function initProgram() {
     function renderWeather() {
         chosenCityEl.innerText = weatherInfo.city.name;
         todayWeatherEl.innerText = weatherInfo.list[0].weather[0].description;
-        temperatureEl.innerText = getFahrenheit(weatherInfo.list[0].main.temp)+" ℉";
+        temperatureEl.innerText = getFahrenheit(weatherInfo.list[0].main.temp) + " ℉";
         getDogInfo();
     }
 
@@ -346,65 +364,14 @@ function mapAPIStuff() {
             longText.innerText = long.toFixed(2);
         });
     });
-
-    //Function that displays the map on the page, may ultimately delete this if we deem it unnecessary
-
-
-    function initMap() {
-
-
-        // The location of Saint Paul
-        var stp = { lat: 44.954, lng: -93.091 };
-        // The map, centered at Saint Paul
-        var map = new google.maps.Map(
-            document.getElementById('map'), { zoom: 4, center: stp });
-        // The marker, positioned at Saint Paul
-        var marker = new google.maps.Marker({ position: stp, map: map });
-
-
-    }
-
-    function displayMaps() {
-
-
-        // const hi = $("<div>");
-        // hi.text("hello world");
-        // // $("#map").append(hi);
-
-        initMap();
-
-    }
-    displayMaps();
-
-
-
-    //Google Maps API Variables
-    //May need to delete if we will not use the map
-
-
-    const apiKey = "AIzaSyCTeE4A-78FaUSVBlEKSvpdcDqTT8eFg3E";
-    const src = "https://maps.googleapis.com/maps/api/js?key=" + apiKey + "&callback=initMap"
-    var unirest = require("unirest");
-
-    var req = unirest("GET", "https://google-maps-geocoding.p.rapidapi.com/geocode/json");
-
-    //The information needed to display the map on the main page, can delete if not needed
-
-    req.query({
-        "language": "en",
-        "address": "1420 Eckles Ave%2C St Paul%2C MN 55108"
-    });
-
-    req.headers({
-        "x-rapidapi-host": "google-maps-geocoding.p.rapidapi.com",
-        "x-rapidapi-key": "a0b0c604c7mshc44691fb6b879c8p15b44fjsn50b69bb48df4"
-    });
-
-    req.end(function (res) {
-        if (res.error) throw new Error(res.error);
-
-        console.log(res.body);
-    });
-
 }
 
+//takes the information held in the "dogInformationGathered" variable
+//creates an element with the image tag
+//appends that information to the body
+function renderDogPic() {
+    const dogPicEl = document.createElement("img");
+    dogPicEl.setAttribute("src", dogInformationGathered.data.message);
+    document.body.append(dogPicEl);
+}
+initProgram();

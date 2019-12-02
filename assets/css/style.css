@@ -101,13 +101,6 @@ body {
   /* margin-top: 200px; */
 }
 
-.disappear {
-  height: 0px;
-  width: 0px;
-  transition: 1s;
-  font-size: 0px;
-}
-
 .inherit{
   font-size: inherit;
 }
@@ -259,3 +252,11 @@ left: 57%;
     font-size: 20px;
     margin: 16px;
   }
+
+.disappear {
+  height: 0px;
+  width: 0px;
+  transition: 1s;
+  font-size: 0px;
+  
+}
