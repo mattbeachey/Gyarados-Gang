@@ -10,17 +10,12 @@ function initProgram() {
 
 
     //Buttons on the document.
-    const testingSelectEl = document.getElementById("testingSelect");
-    const seeDogeButtonEl = document.getElementById("seeDoge");
     const startEl = document.getElementById("start");
     const mainflexEl = document.getElementById("mainflex");
-    const moveForwardButtonEl = document.getElementById("moveForward");
     const appNameEl = document.getElementById("appName");
     const spacerEl = document.getElementById("spacer");
     const dogImageEl = document.getElementById("dogImage");
     const dogImage2El = document.getElementById("dogImage2")
-    const startOverEl = document.getElementById("startOver");
-    const resultsPageEl = document.getElementById("resultspage");
     const dogquestionsEl = document.getElementById("dogQuestions")
     const yesButtonEl = document.getElementById("yesButton")
     const chosenCityEl = document.getElementById("chosenCity");
@@ -56,11 +51,7 @@ function initProgram() {
         }
     } renderDogQuestions();
 
-    //Adds an event listener to the move forward button
-    //runs the moveForward function
-    moveForwardButtonEl.addEventListener("click", function () {
-        moveForward();
-    })
+    
 
     //Adds an event listener to the yes button
     //runs the moveForward function
@@ -156,11 +147,7 @@ function initProgram() {
     }
 
 
-    //Adds an event listener to the start over button
-    //runs the startOver function
-    startOverEl.addEventListener("click", function () {
-        startOver();
-    });
+    
 
     //moves the dogify logo and dog image back to the start
     //brings back the the opening text
@@ -193,12 +180,7 @@ function initProgram() {
         renderDogQuestions();
     }
 
-    //adds an event listener to results page button
-    //runs the resultsPage function
-    resultsPageEl.addEventListener("click", function () {
-        resultsPage();
-    });
-
+    
     //brings up other dog image
     //
     function resultsPage() {
@@ -264,13 +246,7 @@ function initProgram() {
 
 
 
-    //Adds an event listener to the button for testing
-    //chages cityName to the name in the cityNameInputEl
-    //runs the getWeatherInfo function
-    seeDogeButtonEl.addEventListener("click", function () {
-        applyTraitToDogAndCity();
-    }
-    )
+    
 
 
     //Runs the weather API to get the longitude the cityName
