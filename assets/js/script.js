@@ -1,9 +1,29 @@
 function initProgram() {
+
     let dogBreed;
     let dogInformationGathered;
     let cityName;
     let weatherInfo;
     let trait;
+    let personalityScore = [
+        {
+            trait: "adventurous",
+            score: 0,
+        },
+        {
+            trait: "mellow",
+            score: 0,
+        },
+        {
+            trait: "rational",
+            score: 0,
+        },
+        {
+            trait: "social",
+            score: 0,
+        },
+    ]
+
 
     //Buttons on the document.
     const testingSelectEl = document.getElementById("testingSelect");
@@ -21,28 +41,6 @@ function initProgram() {
     const chosenCityEl = document.getElementById("chosenCity");
     const todayWeatherEl = document.getElementById("todayWeather");
     const temperatureEl = document.getElementById("temperatureWeather");
-
-    //Arrays
-    const dogQuestions = [`	Have you ever used the snapchat dog filter and thought 'man, I wish I really did look this cute?'`,
-        `Have you ever looked at a can of Alpo and thought, 'These savory chunks? This is better than what I normally eat!'`,
-        `Has your wife ever kicked you to the 'dog house' and you were kind of okay with it?`,
-        `Ever see a dog in public and think, 'Hey, that kind of looks like me!'?`,
-        `Are you a furry? Do you want to be?`,
-        `Do you ever get so distracted and others around you have to yell 'squirrel' to remind you to get you back on track?`,
-        `Ever watch a dog show and think to yourself, 'I could do that!'`,
-        `Have you been called a Golden Retriever because of your personality? Me neither…`,
-        `Is your nose wet? `,
-        `Does your hair get shiny after you eat scrambled eggs?`,
-        `Is your shampoo oatmeal-based?`,
-        `Does the sound of 'treat' or 'snack' get you excited?`,
-        `Does a red fire hydrant fill you with feels?`,
-        `Do you experience intense, heart-wrenching, uncontrollable feelings of abandonment whenever anyone leaves the room?`,
-        `Do you sit in a kennel when you’re at home by yourself?`,
-        `Is your favorite movie Holes (2003) starring Shia LaBeouf?`,
-        `Do you have the TV on when you’re home alone, just so it kind of feels like you’re with people because you’d get too sad otherwise?`,
-        `Do you gain an irresistible feeling to scratch the back of your ear with your foot?`,
-        `Are you a good boy?`]
-
 
     //Gets the dog questions array from above
     //shuffles it. 
@@ -71,9 +69,6 @@ function initProgram() {
             )
         }
     } renderDogQuestions();
-
-
-
 
     //Adds an event listener to the move forward button
     //runs the moveForward function
@@ -189,7 +184,12 @@ function initProgram() {
     }
 
 
-
+    function reviewTest() {
+        personalityScore.sort(function (a, b) {
+            return b.score - a.score;
+        })
+        applyTraitToDogAndCity;
+    }
 
 
 
@@ -200,25 +200,24 @@ function initProgram() {
     function applyTraitToDogAndCity() {
         trait = testingSelectEl.value;
         switch (trait) {
-            case 'Adventurous':
+            case 'adventurous':
                 dogBreed = "vizsla";
                 cityName = "Longyearbyen";
                 break;
-            case 'Mellow':
+            case 'mellow':
                 dogBreed = "dane/great";
                 cityName = "Kennebunkport";
                 break;
-            case 'Rational':
+            case 'rational':
                 dogBreed = "collie/border"
                 cityName = "new%20york";
                 break;
-            case 'Social':
+            case 'social':
                 dogBreed = "retriever/golden"
                 cityName = "new%20orleans";
                 break;
         }
-        getDogInfo();
-        getWeatherInfo();
+            getWeatherInfo();
     }
 
 
@@ -234,7 +233,7 @@ function initProgram() {
 
 
     //Runs the weather API to get the longitude the cityName
-    //Runs the getDogInfoFunction
+    //Runs the renderWeather function
     function getWeatherInfo() {
         const apiKey = "201eb0ee5ccf4e9d19410ecb6a7d9eba"
         const queryURL = "https://api.openweathermap.org/data/2.5/forecast?q=";
@@ -252,14 +251,17 @@ function initProgram() {
         return Math.floor((k - 273.15) * 1.8000 + 32.00);
     }
 
-    //
+    //renders the city name, current weather conditions, and current weather
+    //runs the get dog info functions
     function renderWeather() {
         chosenCityEl.innerText = weatherInfo.city.name;
         todayWeatherEl.innerText = weatherInfo.list[0].weather[0].description;
         temperatureEl.innerText = getFahrenheit(weatherInfo.list[0].main.temp);
+        getDogInfo();
     }
 
-    //Selects the dogBreed by referencing the longitud
+    //Generates the url of a dog image of selected dog breed
+    //runs the renderDogPic function.
     function getDogInfo() {
         const queryURL = "https://dog.ceo/api/breed/" + dogBreed + "/images/random"
         axios.get(queryURL)
