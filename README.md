@@ -1,3 +1,2 @@
-# Gyarados-Gang
-
-https://mattbeachey.github.io/Gyarados-Gang/
+# Doggify
+https://mattbeachey.github.io/doggify/
