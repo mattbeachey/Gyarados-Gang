@@ -3,7 +3,7 @@ function initProgram() {
     let dogInformationGathered;
     let cityName;
     let weatherInfo;
-    let trait;
+    let trait; 
 
     //Buttons on the document.
     const testingSelectEl = document.getElementById("testingSelect");
