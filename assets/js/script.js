@@ -27,6 +27,8 @@ function initProgram() {
     const answerCEl = document.getElementById("answerC");
     const answerDEl = document.getElementById("answerD");
     const quizBodyEl = document.getElementById("quizBody");
+    const resultsHeaderEl = document.getElementById("resultsheader");
+    const resultsHeaderTextEl = document.getElementById("resultsheadertext")
 
     //Gets the dog questions array from above
     //shuffles it. 
@@ -185,17 +187,23 @@ function initProgram() {
     //brings up other dog image
     //
     function resultsPage() {
-        dogImageEl.setAttribute("class", "disappear");
+        // dogImageEl.setAttribute("class", "disappear");
         dogImage2El.removeAttribute("class", "disappear");
         dogImage2El.setAttribute("class", "dogimageResults");
 
-        appNameEl.setAttribute("class", "header-big-results");
-        appNameEl.innerText = `
-        Your 
-            Results
-        `
+        resultsHeaderEl.removeAttribute("class", "disappear")
+        resultsHeaderEl.setAttribute("class", "mainflexresults")
 
-        mainflexEl.setAttribute("class", "mainflexResults");
+        resultsHeaderTextEl.removeAttribute("class", "disappear")
+        resultsHeaderTextEl.setAttribute("class", "header-big-results")
+
+        // appNameEl.setAttribute("class", "header-big-results");
+        // appNameEl.innerText = `
+        // Your 
+        //     Results
+        // `
+
+        // mainflexEl.setAttribute("class", "mainflexResults");
 
         spacerEl.setAttribute("class", "spacer");
 
