@@ -277,13 +277,18 @@ function initProgram() {
         spacerEl.setAttribute("class", "spacer");
 
         mainflexEl.removeAttribute("class", "mainflexClick");
+        mainflexEl.removeAttribute("class", "mainflexResults");
         mainflexEl.setAttribute("class", "mainflex");
 
         appNameEl.removeAttribute("class", "header-small");
+        appNameEl.removeAttribute("class", "header-big-results");
         appNameEl.setAttribute("class", "header-big");
+        appNameEl.innerText = "Doggify"
 
         dogImageEl.removeAttribute("class", "dogimageSmall");
+        dogImageEl.removeAttribute("dogimageResults")
         dogImageEl.setAttribute("class", "dogimage");
+        dogImageEl.setAttribute("src", "./assets/images/doggify-threshold-face-square.png")
 
         startEl.removeAttribute("class", "start-instruction");
         startEl.setAttribute("class",  "disappear");
