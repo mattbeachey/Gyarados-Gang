@@ -23,16 +23,13 @@
         <img class="dogimage2 disappear" id="dogImage2" src="./assets/images/doggify-threshold-face-2.png">
     </div>
 
-    <div class="disappear" id="quizBody">
-        <h2 class="quiz-questions">1. You’re driving on the highway heading home to feed your dog. You’re about to miss your exit because your fave
-            song came on the radio. What do you do next?</h2>
+    <div class="disappear" id = "quizBody">
+        <h2 class="quiz-questions" id ="quizQuestion"></h2>
         <ol type="a">
-            <li>Seize the moment to cut some people off and zoom onto the exit ramp. You’ve definitely seen Fast and the Furious
-                at least once. (adventurous)</li>
-            <li>Wait for the next exit and reroute from there. (rational)</li>
-            <li>Just keep driving because this song is fire. You’ll get home when you get home. (mellow)</li>
-            <li>Turn on your blinker, wave to the car next to you to let you in, and do that head nod/ wave thing like you’re
-                best friends now. (social)</li>
+            <li id ="answerA"></li>
+            <li id ="answerB"></li>
+            <li id ="answerC"></li>
+            <li id ="answerD"></li>
         </ol>
     </div>
 
@@ -44,12 +41,17 @@
         <p class="inherit">Start the quiz by clicking HERE!</p>
     </div>
     <div id="dogQuestions" class="dogQuestionBox"></div>
-    <button class="yes-button" id="yesButton">Yes???</button>
+    <div class="yes-button" id="yesButton">Yes???</div>
 
-
-
-
-
+    <div class="disappear" id = "quizBody">
+        <h2 class="quiz-questions" id ="quizQuestion"></h2>
+        <ol type="a">
+            <li id ="answerA"></li>
+            <li id ="answerB"></li>
+            <li id ="answerC"></li>
+            <li id ="answerD"></li>
+        </ol>
+    </div>
 
 
     <div class="testing-realm" id="testingRealm">
@@ -98,6 +100,7 @@
     <!-- Referencing our different js pages -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="assets/js/arrays.js"></script>
     <script src="assets/js/script.js"></script>
     <!-- <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCTeE4A-78FaUSVBlEKSvpdcDqTT8eFg3E&callback=initMap"></script> -->
 </body>
