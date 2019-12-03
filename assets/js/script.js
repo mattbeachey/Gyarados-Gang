@@ -314,18 +314,19 @@ function initProgram() {
         dogImageEl.removeAttribute("class", "dogimage");
         dogImageEl.setAttribute("class", "disappear");
 
+        spacerEl.setAttribute("class", "disappear")
+
         dogImage2El.removeAttribute("class", "disappear");
         dogImage2El.setAttribute("class", "dogimageResults");
 
         appNameEl.setAttribute("class", "header-big-results");
         appNameEl.innerText = `
-        Your 
-            Results
+        Your Results
         `
 
         resultsPageEl.setAttribute("class", "results-page")
 
-        mainflexEl.setAttribute("class", "mainflexResults");
+        mainflexEl.setAttribute("class", "mainflexresults");
 
         spacerEl.setAttribute("class", "spacer");
 
