@@ -27,6 +27,7 @@ function initProgram() {
     const answerCEl = document.getElementById("answerC");
     const answerDEl = document.getElementById("answerD");
     const quizBodyEl = document.getElementById("quizBody");
+    const resultsPageEl = document.getElementById("resultsPage");
 
     //Gets the dog questions array from above
     //shuffles it. 
@@ -51,7 +52,7 @@ function initProgram() {
         }
     } renderDogQuestions();
 
-    
+
 
     //Adds an event listener to the yes button
     //runs the moveForward function
@@ -97,7 +98,7 @@ function initProgram() {
         startEl.setAttribute("class", "disappear");
         quizBodyEl.removeAttribute("class", "disapper");
         quizBodyEl.setAttribute("class", "quiz");
-        console.log(answerAEl)
+
     }
 
     //Event listeners on the quiz answers that move through the quiz
@@ -125,7 +126,7 @@ function initProgram() {
 
     //Renders the quiz questions
     function renderQuizQuestions() {
-        console.log(personalityScore);
+
         quizQuestionEl.innerText = arrayQuestions[currentQuestion].question;
         answerAEl.innerText = arrayQuestions[currentQuestion].answerA[0];
         answerBEl.innerText = arrayQuestions[currentQuestion].answerB[0];
@@ -143,12 +144,12 @@ function initProgram() {
             renderQuizQuestions();
         } else {
             reviewTest();
-            resultsPage();
+            renderResultsPage();
         }
     }
 
 
-    
+
 
     //moves the dogify logo and dog image back to the start
     //brings back the the opening text
@@ -179,30 +180,6 @@ function initProgram() {
         dogquestionsEl.setAttribute("class", "dogQ");
 
         renderDogQuestions();
-    }
-
-    
-    //brings up other dog image
-    //
-    function resultsPage() {
-        dogImageEl.setAttribute("class", "disappear");
-        dogImage2El.removeAttribute("class", "disappear");
-        dogImage2El.setAttribute("class", "dogimageResults");
-
-        appNameEl.setAttribute("class", "header-big-results");
-        appNameEl.innerText = `
-        Your 
-            Results
-        `
-
-        mainflexEl.setAttribute("class", "mainflexResults");
-
-        spacerEl.setAttribute("class", "spacer");
-
-        dogquestionsEl.removeAttribute("class", "dogQ")
-        dogquestionsEl.setAttribute("class", "disappear")
-
-        quizBodyEl.setAttribute("class", "disappear");
     }
 
     //sorts the personality score.
@@ -247,7 +224,7 @@ function initProgram() {
 
 
 
-    
+
 
 
     //Runs the weather API to get the longitude the cityName
@@ -298,7 +275,41 @@ function initProgram() {
     function renderDogPic() {
         const dogPicEl = document.createElement("img");
         dogPicEl.setAttribute("src", dogInformationGathered.data.message);
-        document.body.append(dogPicEl);
+        resultsPageEl.append(dogPicEl);
+        renderResultsPage();
+    }
+
+
+
+    //brings up other dog image
+    //
+    function renderResultsPage() {
+        dogImageEl.removeAttribute("class", "dogimage");
+        dogImageEl.setAttribute("class", "disappear");
+
+        dogImage2El.removeAttribute("class", "disappear");
+        dogImage2El.setAttribute("class", "dogimageResults");
+
+        appNameEl.setAttribute("class", "header-big-results");
+        appNameEl.innerText = `
+        Your 
+            Results
+        `
+
+        resultsPageEl.setAttribute("class", "results-page")
+
+        mainflexEl.setAttribute("class", "mainflexResults");
+
+        spacerEl.setAttribute("class", "spacer");
+
+        dogquestionsEl.removeAttribute("class", "dogQ")
+        dogquestionsEl.setAttribute("class", "disappear")
+
+        quizBodyEl.setAttribute("class", "disappear");
+
+        chosenCityEl.removeAttribute("class", "inherit")
+        todayWeatherEl.removeAttribute("class", "inherit")
+        temperatureEl.removeAttribute("class", "inherit")
     }
 
 
@@ -317,38 +328,4 @@ function initProgram() {
 
 
 
-
-
-
 } initProgram();
-
-
-function mapAPIStuff() {
-
-    //JS for longitude and latitude, taken from https://developer.mozilla.org/en-US/docs/Web/API/Coordinates/longitude
-    //Will use this function to determine the user's location and take the longitude and latitude to apply to a certain dog breed
-
-    let locationButtonEl = document.getElementById("get-location");
-    let latText = document.getElementById("latitude");
-    let longText = document.getElementById("longitude");
-
-    locationButtonEl.addEventListener("click", function () {
-        navigator.geolocation.getCurrentPosition(function (position) {
-            let lat = position.coords.latitude;
-            let long = position.coords.longitude;
-
-            latText.innerText = lat.toFixed(2);
-            longText.innerText = long.toFixed(2);
-        });
-    });
-}
-
-//takes the information held in the "dogInformationGathered" variable
-//creates an element with the image tag
-//appends that information to the body
-function renderDogPic() {
-    const dogPicEl = document.createElement("img");
-    dogPicEl.setAttribute("src", dogInformationGathered.data.message);
-    document.body.append(dogPicEl);
-}
-initProgram();
