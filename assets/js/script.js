@@ -27,6 +27,7 @@ function initProgram() {
     const answerCEl = document.getElementById("answerC");
     const answerDEl = document.getElementById("answerD");
     const quizBodyEl = document.getElementById("quizBody");
+    const resultsPageEl = document.getElementById("resultsPage")
     const resultsHeaderEl = document.getElementById("resultsheader");
     const resultsHeaderTextEl = document.getElementById("resultsheadertext")
 
@@ -156,7 +157,6 @@ function initProgram() {
             renderQuizQuestions();
         } else {
             reviewTest();
-            renderResultsPage();
         }
     }
 
@@ -253,11 +253,6 @@ function initProgram() {
             )
     }
 
-    //takes the value of the temperature in kelvins and returns in Fahrenheit
-    function getFahrenheit(k) {
-        return Math.floor((k - 273.15) * 1.8000 + 32.00);
-    }
-
     //renders the city name, current weather conditions, and current weather
     //runs the get dog info functions
     function renderWeather() {
@@ -265,6 +260,11 @@ function initProgram() {
         todayWeatherEl.innerText = weatherInfo.list[0].weather[0].description;
         temperatureEl.innerText = getFahrenheit(weatherInfo.list[0].main.temp) + " ℉";
         getDogInfo();
+    }
+
+    //takes the value of the temperature in kelvins and returns in Fahrenheit
+    function getFahrenheit(k) {
+        return Math.floor((k - 273.15) * 1.8000 + 32.00);
     }
 
     //Generates the url of a dog image of selected dog breed
@@ -290,7 +290,6 @@ function initProgram() {
         resultsPageEl.append(dogPicEl);
         renderResultsPage();
     }
-
 
 
     //brings up other dog image
