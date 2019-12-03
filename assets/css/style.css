@@ -121,6 +121,7 @@ body {
   position: absolute;
   top: 40%;
   transition: 1s;
+  cursor: pointer;
 }
 
 
@@ -223,7 +224,7 @@ left: 57%;
     width: 75%;
     position: absolute;
     top: 40%;
-    cursor: pointer;
+    
   }
   .dogQ0,
   .dogQ1,
