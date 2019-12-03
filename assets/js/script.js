@@ -274,9 +274,9 @@ function initProgram() {
     //renders the city name, current weather conditions, and current weather
     //runs the get dog info functions
     function renderWeather() {
-        chosenCityEl.innerText = weatherInfo.city.name;
-        todayWeatherEl.innerText = weatherInfo.list[0].weather[0].description;
-        temperatureEl.innerText = getFahrenheit(weatherInfo.list[0].main.temp) + " ℉";
+        chosenCityEl.innerText = "Your city is " + weatherInfo.city.name;
+        todayWeatherEl.innerText = "Right now the conditions are " + weatherInfo.list[0].weather[0].description;
+        temperatureEl.innerText = "The current temperature is " + getFahrenheit(weatherInfo.list[0].main.temp) + " ℉";
         getDogInfo();
     }
 

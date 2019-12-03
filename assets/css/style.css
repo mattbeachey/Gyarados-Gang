@@ -175,8 +175,8 @@ p {
   color: white;
   font-weight: normal;
   min-height: 40px;
-  padding: 4px;
-  display: flex;
+  padding-left: 15px;
+  padding-right: 15px;
   flex-direction: column;
   justify-content: center;
 }
