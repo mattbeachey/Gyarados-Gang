@@ -27,11 +27,13 @@ function initProgram() {
     const answerCEl = document.getElementById("answerC");
     const answerDEl = document.getElementById("answerD");
     const quizBodyEl = document.getElementById("quizBody");
-    const resultsPageEl = document.getElementById("resultsPage")
+    const resultsPageEl = document.getElementById("resultsPage");
     const resultsHeaderEl = document.getElementById("resultsheader");
-    const resultsHeaderTextEl = document.getElementById("resultsheadertext")
-    const promptScreen1El = document.getElementById("promptScreen1")
-    const promptScreen2El = document.getElementById("promptScreen2")
+    const resultsHeaderTextEl = document.getElementById("resultsheadertext");
+    const promptScreen1El = document.getElementById("promptScreen1");
+    const promptScreen2El = document.getElementById("promptScreen2");
+    const dogPictureBoxEl = document.getElementById("dogpicturebox");
+    const finalResultsBoxEl = document.getElementById("finalresultsbox");
 
 
     //Gets the dog questions array from above
@@ -303,7 +305,8 @@ function initProgram() {
     function renderDogPic() {
         const dogPicEl = document.createElement("img");
         dogPicEl.setAttribute("src", dogInformationGathered.data.message);
-        resultsPageEl.append(dogPicEl);
+        dogPicEl.setAttribute("class", "rendereddogpic")
+        dogPictureBoxEl.append(dogPicEl);
         renderResultsPage();
     }
 
@@ -324,7 +327,7 @@ function initProgram() {
         Your Results
         `
 
-        resultsPageEl.setAttribute("class", "results-page")
+        resultsPageEl.setAttribute("class", "container")
 
         mainflexEl.setAttribute("class", "mainflexresults");
 
