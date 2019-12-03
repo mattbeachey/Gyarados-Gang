@@ -117,7 +117,7 @@ body {
 .start-instruction {
   background-color: rgba(255, 255, 255, 0.664);
   border-radius: 16px;
-  width: 50%;
+  width: 70%;
   position: absolute;
   top: 40%;
   transition: 1s;
@@ -288,7 +288,7 @@ left: 57%;
 .quiz {
     background-color: rgba(255, 255, 255, 0.664);
     border-radius: 16px;
-    width: 50%;
+    width: 70%;
     position: absolute;
     top: 30%;
     transition: 1s;
@@ -311,4 +311,12 @@ left: 57%;
   background-color: #fde24a;
   user-select: none;
   cursor: pointer;
+}
+
+.prompt-screen{
+  font-size: 30px;
+}
+.start-instruction:hover {
+  background-color: #fde24abb;
+  transition: 0s;
 }
