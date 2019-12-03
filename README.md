@@ -7,6 +7,10 @@ Welcome to Doggify! The app that pairs you with a dog breed and vacation spot to
 ## Usage 
 Take this personality quiz to find out what dog and vacation spot matches your personality type. Click the "Yes" button on the main page to initiate the quiz. You'll answer 10 scenario questions with answers relating to different personality types. After answering the last question you'll find out which dog breed and vacation spot best matches your personality type on our results page.
 
+![main page](https://github.com/mattbeachey/doggify/blob/master/assets/images/Screen%20Shot%202019-12-03%20at%202.37.24%20PM.png "main page")
+![start page](https://github.com/mattbeachey/doggify/blob/master/assets/images/Screen%20Shot%202019-12-03%20at%203.25.25%20PM.png "start page")
+![quiz page](https://github.com/mattbeachey/doggify/blob/master/assets/images/Screen%20Shot%202019-12-03%20at%203.26.14%20PM.png "quiz page")
+![results page](https://github.com/mattbeachey/doggify/blob/master/assets/images/Screen%20Shot%202019-12-03%20at%203.27.13%20PM.png "results page")
 
 ## Credits
 Group Members:
