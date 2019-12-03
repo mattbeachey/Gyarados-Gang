@@ -30,6 +30,8 @@ function initProgram() {
     const resultsPageEl = document.getElementById("resultsPage")
     const resultsHeaderEl = document.getElementById("resultsheader");
     const resultsHeaderTextEl = document.getElementById("resultsheadertext")
+    const promptScreen1El = document.getElementById("promptScreen1")
+    const promptScreen2El = document.getElementById("promptScreen2")
 
 
     //Gets the dog questions array from above
@@ -80,6 +82,14 @@ function initProgram() {
         dogquestionsEl.removeAttribute("class", "dogQ")
         dogquestionsEl.setAttribute("class", "disappear")
 
+        promptScreen1El.removeAttribute("class", "inherit")
+        promptScreen1El.setAttribute("class", "prompt-screen")
+        
+        promptScreen2El.removeAttribute("class", "inherit")
+        promptScreen2El.setAttribute("class", "prompt-screen")
+       
+
+
         individualDogQuestionEl0.innerHTML = ""
         individualDogQuestionEl1.innerHTML = ""
         individualDogQuestionEl2.innerHTML = ""
@@ -111,6 +121,12 @@ function initProgram() {
         startEl.setAttribute("class", "disappear");
         quizBodyEl.removeAttribute("class", "disapper");
         quizBodyEl.setAttribute("class", "quiz");
+
+        promptScreen1El.removeAttribute("class", "prompt-screen")
+        promptScreen1El.setAttribute("class", "inherit")
+        
+        promptScreen2El.removeAttribute("class", "prompt-screen")
+        promptScreen2El.setAttribute("class", "inherit")
 
     }
 
