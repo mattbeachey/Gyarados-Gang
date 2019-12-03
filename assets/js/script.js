@@ -27,7 +27,9 @@ function initProgram() {
     const answerCEl = document.getElementById("answerC");
     const answerDEl = document.getElementById("answerD");
     const quizBodyEl = document.getElementById("quizBody");
-    const resultsPageEl = document.getElementById("resultsPage");
+    const resultsHeaderEl = document.getElementById("resultsheader");
+    const resultsHeaderTextEl = document.getElementById("resultsheadertext")
+
 
     //Gets the dog questions array from above
     //shuffles it. 
@@ -46,12 +48,17 @@ function initProgram() {
         for (let i = 0; i < 4; i++) {
             $("#dogQuestions").append(
                 `
-                <p class="dogQ` + i + ` inherit">` + dogQuestions[i] + `</p>
+                <div id="singleDogQ` + i + `" class="dogQ` + i + ` inherit">` + dogQuestions[i] + `<div id="dogQCorner" class="triangle"></div></div>
+                
                 `
             )
         }
     } renderDogQuestions();
 
+    const individualDogQuestionEl0 = document.getElementById("singleDogQ0")
+    const individualDogQuestionEl1 = document.getElementById("singleDogQ1")
+    const individualDogQuestionEl2 = document.getElementById("singleDogQ2")
+    const individualDogQuestionEl3 = document.getElementById("singleDogQ3")
 
 
     //Adds an event listener to the yes button
@@ -80,6 +87,20 @@ function initProgram() {
 
         dogquestionsEl.removeAttribute("class", "dogQ")
         dogquestionsEl.setAttribute("class", "disappear")
+
+        individualDogQuestionEl0.innerHTML = ""
+        individualDogQuestionEl1.innerHTML = ""
+        individualDogQuestionEl2.innerHTML = ""
+        individualDogQuestionEl3.innerHTML = ""
+
+        setTimeout(function () {
+            individualDogQuestionEl0.setAttribute("class", "disappear")
+            individualDogQuestionEl1.setAttribute("class", "disappear")
+            individualDogQuestionEl2.setAttribute("class", "disappear")
+            individualDogQuestionEl3.setAttribute("class", "disappear")
+        }, 750)
+
+
 
         yesButtonEl.removeAttribute("class", "yes-button")
         yesButtonEl.setAttribute("class", "disappear")

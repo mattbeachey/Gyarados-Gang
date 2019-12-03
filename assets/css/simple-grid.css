@@ -94,19 +94,25 @@ p {
 
 .container {
   width: 90%;
+  transition: all 1s;
   margin-left: auto;
   margin-right: auto;
+  transition: all 1s;
 }
 
 .row {
   position: relative;
   width: 100%;
+  transition: all 1s;
+  transition: all 1s;
 }
 
 .row [class^="col"] {
   float: left;
   margin: 0.5rem 2%;
+  transition: all 1s;
   min-height: 0.125rem;
+  transition: all 1s;
 }
 
 .col-1,
@@ -122,54 +128,67 @@ p {
 .col-11,
 .col-12 {
   width: 96%;
+  transition: all 1s;
 }
 
 .col-1-sm {
   width: 4.33%;
+  transition: all 1s;
 }
 
 .col-2-sm {
   width: 12.66%;
+  transition: all 1s;
 }
 
 .col-3-sm {
   width: 21%;
+  transition: all 1s;
 }
 
 .col-4-sm {
   width: 29.33%;
+  transition: all 1s;
 }
 
 .col-5-sm {
   width: 37.66%;
+  transition: all 1s;
 }
 
 .col-6-sm {
   width: 46%;
+  transition: all 1s;
 }
 
 .col-7-sm {
   width: 54.33%;
+  transition: all 1s;
 }
 
 .col-8-sm {
   width: 62.66%;
+  transition: all 1s;
 }
 
 .col-9-sm {
   width: 71%;
+  transition: all 1s;
 }
 
 .col-10-sm {
   width: 79.33%;
+  transition: all 1s;
 }
 
 .col-11-sm {
   width: 87.66%;
+  transition: all 1s;
 }
 
 .col-12-sm {
   width: 96%;
+  transition: all 1s;
 }
 
 .row::after {
@@ -185,56 +204,69 @@ p {
 @media only screen and (min-width: 33.75em) {  /* 540px */
   .container {
     width: 80%;
+    transition: all 1s;
   }
 }
 
 @media only screen and (min-width: 45em) {  /* 720px */
   .col-1 {
     width: 4.33%;
+    transition: all 1s;
   }
 
   .col-2 {
     width: 12.66%;
+    transition: all 1s;
   }
 
   .col-3 {
     width: 21%;
+    transition: all 1s;
   }
 
   .col-4 {
     width: 29.33%;
+    transition: all 1s;
   }
 
   .col-5 {
     width: 37.66%;
+    transition: all 1s;
   }
 
   .col-6 {
     width: 46%;
+    transition: all 1s;
   }
 
   .col-7 {
     width: 54.33%;
+    transition: all 1s;
   }
 
   .col-8 {
     width: 62.66%;
+    transition: all 1s;
   }
 
   .col-9 {
     width: 71%;
+    transition: all 1s;
   }
 
   .col-10 {
     width: 79.33%;
+    transition: all 1s;
   }
 
   .col-11 {
     width: 87.66%;
+    transition: all 1s;
   }
 
   .col-12 {
     width: 96%;
+    transition: all 1s;
   }
 
   .hidden-sm {
@@ -245,6 +277,7 @@ p {
 @media only screen and (min-width: 60em) { /* 960px */
   .container {
     width: 75%;
+    transition: all 1s;
     max-width: 60rem;
   }
 }
