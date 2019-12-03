@@ -198,6 +198,7 @@ left: 57%;
   color: black;
   font-weight: bolder;
   font-size: 40px;
+  cursor: pointer;
 }
 
 .yes-button:hover {
@@ -222,6 +223,7 @@ left: 57%;
     width: 75%;
     position: absolute;
     top: 40%;
+    cursor: pointer;
   }
   .dogQ0,
   .dogQ1,
@@ -263,4 +265,5 @@ left: 57%;
 .answer:hover {
   background-color: #fde24a;
   user-select: none;
+  cursor: pointer;
 }
