@@ -158,10 +158,54 @@ p {
 .dogQ1,
 .dogQ2,
 .dogQ3 {
-  /* background-color: aqua; */
+  text-align: center;
+  font-family: 'Solway', serif;
+  color: black;
+  font-weight: bolder;
+  font-size: 20px;
+  margin: 16px;
   max-width: 500px;
   overflow-wrap: break-word;
+  position: relative;
+  left: 0%;
+  transform: rotate(0deg);
+  background-color: rgb(31, 31, 31);
+  color: white;
+  font-weight: normal;
+  min-height: 40px;
+  padding: 4px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
+
+.triangle {
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  width: 0;
+  height: 0;
+  border-bottom: 18px solid #757c55;
+  border-left: 18px solid #b8c482;   
+}
+
+/* .dogQ0:before,
+.dogQ1:before,
+.dogQ2:before,
+.dogQ3:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  border-width: 0 16px 16px 0;
+  border-style: solid;
+  border-color: #b8c482 #b8c482 #658E15 #658E15;
+  background: #658E15;
+ -webkit-box-shadow: 0 1px 1px rgba(0,0,0,0.3), -1px 1px 1px rgba(0,0,0,0.2);
+  -moz-box-shadow: 0 1px 1px rgba(0,0,0,0.3), -1px 1px 1px rgba(0,0,0,0.2);
+  box-shadow: 0 1px 1px rgba(0,0,0,0.3), -1px 1px 1px rgba(0,0,0,0.2);
+  display: block; width: 0;
+} */
 
 .dogQ0 {
 transform: rotate(6deg);
