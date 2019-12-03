@@ -121,6 +121,8 @@ function initProgram() {
     quizBodyEl.removeAttribute("class", "disapper");
     quizBodyEl.setAttribute("class", "quiz");
 
+    quizQuestionEl.setAttribute("class", "quiz-questions");
+
     promptScreen1El.removeAttribute("class", "prompt-screen");
     promptScreen1El.setAttribute("class", "inherit");
 
@@ -222,25 +224,25 @@ function initProgram() {
         dogBreed = "vizsla";
         cityName = "Longyearbyen";
         descriptionText =
-          "Adventurous: You are ADVENTUROUS! You’re energetic like a VIZSLA and would be great at exploring the Arctic wilderness of the small coal-mining town of LONGYEARBYEN, Norway.";
+          "Your personality type is ADVENTUROUS! You’re energetic like a VIZSLA and would be great at exploring the Arctic wilderness of the small coal-mining town of LONGYEARBYEN, Norway.";
         break;
       case "mellow":
         dogBreed = "dane/great";
         cityName = "Kennebunkport";
         descriptionText =
-          "Mellow: You are...MELLOW. Though you do not have a loud personality, your calm and collective demeanor makes you very approachable and lovable, like a GREAT DANE! Nothing says “mellow” like relaxing on the shores of KENNEBUNKPORT, Maine, watching the waves roll in and enjoying nature in all its beauty.";
+          "Your personality type is MELLOW. Though you do not have a loud personality, your calm and collective demeanor makes you very approachable and lovable, like a GREAT DANE! Nothing says “mellow” like relaxing on the shores of KENNEBUNKPORT, Maine, watching the waves roll in and enjoying nature in all its beauty.";
         break;
       case "rational":
         dogBreed = "collie/border";
         cityName = "new%20york";
         descriptionText =
-          "Rational: You are RATIONAL! Your hardworking attitude resembles that of a BORDER COLLIE, intelligent and obedient. No doubt you would thrive weaving through the busy streets of NEW YORK CITY, the concrete jungle where dreams are made of...";
+          "Your personality type is RATIONAL! Your hardworking attitude resembles that of a BORDER COLLIE, intelligent and obedient. No doubt you would thrive weaving through the busy streets of NEW YORK CITY, the concrete jungle where dreams are made of...";
         break;
       case "social":
         dogBreed = "retriever/golden";
         cityName = "new%20orleans";
         descriptionText =
-          "Social: You are SOCIAL! You love being with people and spending time with friends and family, much like a GOLDEN RETRIEVER. What better place to be social than NEW ORLEANS! The Big Easy’s history of music, food, and culture is a great place to meet new friends and try new things!";
+          "Your personality type is SOCIAL! You love being with people and spending time with friends and family, much like a GOLDEN RETRIEVER. What better place to be social than NEW ORLEANS! The Big Easy’s history of music, food, and culture is a great place to meet new friends and try new things!";
         break;
     }
     getWeatherInfo();
@@ -339,6 +341,8 @@ function initProgram() {
     dogquestionsEl.setAttribute("class", "disappear");
 
     quizBodyEl.setAttribute("class", "disappear");
+
+    quizQuestionEl.setAttribute("class", "disappear");
 
     chosenCityEl.removeAttribute("class", "inherit");
     todayWeatherEl.removeAttribute("class", "inherit");

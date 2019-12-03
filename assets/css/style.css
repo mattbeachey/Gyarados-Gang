@@ -65,8 +65,8 @@ body {
 
 .dogimageResults {
   position: absolute;
-  height: 300px;
-  width: 300px;
+  height: 400px;
+  width: 400px;
   opacity: 0.3;
   z-index: 1;
   transition: all 1s;
@@ -255,35 +255,6 @@ left: 57%;
   border: 2px solid #747c50;
 }
 
-@media screen and (max-width: 992px) {
-  .dogimage,
-  .dogimageSmall,
-  .dogimageResults {
-    opacity: 0.3;
-  }
-  .dogimage {
-    position: absolute;
-    right: -10%;
-  }
-  .start-instruction {
-    background-color: rgba(255, 255, 255, 0.664);
-    border-radius: 16px;
-    width: 75%;
-    position: absolute;
-    top: 40%;
-    
-  }
-  .dogQ0,
-  .dogQ1,
-  .dogQ2,
-  .dogQ3 {
-    position: relative;
-    left: 0%;
-    transform: rotate(0deg);
-  }
-}
-
-
 .quiz {
     background-color: rgba(255, 255, 255, 0.664);
     border-radius: 16px;
@@ -319,6 +290,7 @@ left: 57%;
 .prompt-screen{
   font-size: 30px;
 }
+
 .start-instruction:hover {
   background-color: #fde24abb;
   transition: 0s;
@@ -341,7 +313,7 @@ left: 57%;
 }
 
 .resultsbox {
-  height: 200px;
+  min-height: 200px;
   background-color: rgba(255, 255, 255, 0.664);
   border-radius: 16px;
   transition: 1s;
@@ -350,5 +322,54 @@ left: 57%;
 .rendereddogpic {
   max-width: 100%;
   border-radius: 16px;
+}
+
+
+@media screen and (max-width: 992px) {
+  .dogimage,
+  .dogimageSmall,
+  .dogimageResults {
+    opacity: 0.3;
+  }
+  .dogimage {
+    position: absolute;
+    right: -10%;
+  }
+  .start-instruction {
+    background-color: rgba(255, 255, 255, 0.664);
+    border-radius: 16px;
+    width: 75%;
+    position: absolute;
+    top: 40%;
+    
+  }
+  .dogQ0,
+  .dogQ1,
+  .dogQ2,
+  .dogQ3 {
+    position: relative;
+    left: 0%;
+    transform: rotate(0deg);
+    opacity: .8;
+  }
+  .yes-button{
+    opacity: .8;
+  }
+  .dogimageResults {
+    height: 300px;
+    width: 300px;
+  }
+  .prompt-screen{
+    font-size: 18px;
+  }
+  .start-instruction {
+    width: 80%;
+  }
+  .quiz {
+    width: 80%;
+  }
+  .quiz-questions {
+    font-size: 20px;
+  }
 }
 
