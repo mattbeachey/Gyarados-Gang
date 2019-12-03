@@ -37,6 +37,40 @@ const dogQuestions = [`	Have you ever used the snapchat dog filter and thought '
     `Do you gain an irresistible feeling to scratch the back of your ear with your foot?`,
     `Are you a good boy?`]
 
+function shuffle(a) {
+    let j, x, i;
+    for (i = a.length - 1; i > 0; i--) {
+        j = Math.floor(Math.random() * (i + 1));
+        x = a[i];
+        a[i] = a[j];
+        a[j] = x;
+    }
+} shuffle(dogQuestions)
+
+const vacayQuestions = [
+    `Do rainy days and Mondays always get you down?`,
+    `Do you feel the need to go off leash?`,
+    `Are you sick of working group projects?`,
+    `Do you get too many notifications on your phone? Maybe not enough..?`,
+    `Do you ever feel like a plastic bag?`
+]
+
+
+let allQuestions = [];
+allQuestions = _.concat(vacayQuestions[Math.floor(Math.random() * vacayQuestions.length)], dogQuestions[0], dogQuestions[1], dogQuestions[2]);
+console.log(allQuestions);
+function shuffle(a) {
+    let j, x, i;
+    for (i = a.length - 1; i > 0; i--) {
+        j = Math.floor(Math.random() * (i + 1));
+        x = a[i];
+        a[i] = a[j];
+        a[j] = x;
+    }
+} shuffle(allQuestions);
+
+
+
 const arrayQuestions = [{
     questionNumber: 1,
     question: "You’re driving on the highway heading home to feed your dog. You’re about to miss your exit because your fave song came on the radio. What do you do next?",
@@ -58,6 +92,11 @@ const arrayQuestions = [{
             personalityScore[3].score = personalityScore[3].score + 1;
         }],
 },
+
+
+
+
+
 {
     questionNumber: 2,
     question: "Your best friend’s mom made you some gross holiday cookies and wants to know how they were. What do you tell her?",
@@ -79,6 +118,11 @@ const arrayQuestions = [{
             personalityScore[1].score = personalityScore[1].score + 1;
         }],
 },
+
+
+
+
+
 {
     questionNumber: 3,
     question: "You’re eating a giant bowl of spaghetti in bed because you’re an adult and no one can tell you how to live your life. As you bring a huge bite up to your face you miss your mouth, spilling it all over your white comforter. What do you do now?",
@@ -100,6 +144,11 @@ const arrayQuestions = [{
                 personalityScore[0].score = personalityScore[0].score + 1;
             }],
 },
+
+
+
+
+
 {
     questionNumber: 4,
     question: "Your friend is being dumb and wants to watch Bachelor In Paradise while you want to watch The Office for the 7 millionth time. How do you resolve this conflict?",
@@ -121,6 +170,11 @@ const arrayQuestions = [{
             personalityScore[3].score = personalityScore[3].score + 1;
         }],
 },
+
+
+
+
+
 {
     questionNumber: 5,
     question: "It’s a hot and sweaty summer day and you decide to head over to the local public pool to cool off. The entire town is there and all of the lounge chairs are taken. What’s your sweaty body doing next?",
@@ -149,7 +203,7 @@ const arrayQuestions = [{
         function () {
             personalityScore[1].score = personalityScore[1].score + 1;
         }],
-    answerB: ["Get the book of matches from your bedside table and start a fire.",
+    answerB: ["Get the book of matches from your bedside table and start a small fire with your pillows to keep warm.",
         function () {
             personalityScore[0].score = personalityScore[0].score + 1;
         }],
@@ -158,11 +212,16 @@ const arrayQuestions = [{
             personalityScore[2].score = personalityScore[2].score + 1;
 
         }],
-    answerD: ["Go to a friend’s house.",
+    answerD: ["Go to a friend’s house that has shut windows.",
         function () {
             personalityScore[3].score = personalityScore[3].score + 1;
         }],
 },
+
+
+
+
+
 {
     questionNumber: 7,
     question: "You've been tasked with digging a hole in the backyard. Do you:",
@@ -183,6 +242,11 @@ const arrayQuestions = [{
             personalityScore[0].score = personalityScore[0].score + 1;
         }],
 },
+
+
+
+
+
 {
     questionNumber: 8,
     question: "You have a million dollars to spend. What do you do?",
@@ -204,6 +268,11 @@ const arrayQuestions = [{
             personalityScore[0].score = personalityScore[0].score + 1;
         }],
 },
+
+
+
+
+
 {
     questionNumber: 9,
     question: "Your best friend has a poltergeist haunting her new place. She’s very scared. What do you do?",
@@ -224,6 +293,11 @@ const arrayQuestions = [{
             personalityScore[1].score = personalityScore[1].score + 1;
         }],
 },
+
+
+
+
+
 {
     questionNumber: 10,
     question: "A former high school classmate invites you to join their pyramid scheme. Do you:",
