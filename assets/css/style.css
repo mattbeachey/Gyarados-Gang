@@ -70,6 +70,7 @@ body {
   opacity: 0.3;
   z-index: 1;
   transition: all 1s;
+  margin-top: 50px;
 }
 
 .mainflex {
@@ -237,14 +238,15 @@ left: 57%;
 }
 
 .yes-button{
-  border: 2px solid black;
+  border: 2px solid rgb(31, 31, 31);
   border-radius: 4px;
-  background-color: black;
+  background-color: rgb(31, 31, 31);
   font-family: 'Solway', serif;
   color: white;
   font-weight: bolder;
   font-size: 40px;
   cursor: pointer;
+  padding: 4px;
 }
 
 .yes-button:hover {
@@ -304,6 +306,10 @@ left: 57%;
   font-size: 0px;
 }
 
+.disappear2 {
+  display: none
+}
+
 .answer:hover {
   background-color: #fde24a;
   user-select: none;
@@ -316,6 +322,33 @@ left: 57%;
 .start-instruction:hover {
   background-color: #fde24abb;
   transition: 0s;
+}
+  
 ::selection {
   background: #fde24a;
 }
+
+/* .container {
+  border: 2px solid black;
+}
+
+.row {
+  border: 2px solid black;
+} */
+
+.picturebox {
+  height: 200px;
+}
+
+.resultsbox {
+  height: 200px;
+  background-color: rgba(255, 255, 255, 0.664);
+  border-radius: 16px;
+  transition: 1s;
+}
+
+.rendereddogpic {
+  max-width: 100%;
+  border-radius: 16px;
+}
+
