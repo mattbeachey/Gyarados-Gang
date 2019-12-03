@@ -280,6 +280,10 @@ left: 57%;
     position: relative;
     left: 0%;
     transform: rotate(0deg);
+    opacity: .8;
+  }
+  .yes-button{
+    opacity: .8;
   }
 }
 
