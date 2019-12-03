@@ -30,6 +30,7 @@ function initProgram() {
     const resultsHeaderEl = document.getElementById("resultsheader");
     const resultsHeaderTextEl = document.getElementById("resultsheadertext")
 
+
     //Gets the dog questions array from above
     //shuffles it. 
     //appends 4 of those dog questions onto the page.
@@ -47,13 +48,18 @@ function initProgram() {
         for (let i = 0; i < 4; i++) {
             $("#dogQuestions").append(
                 `
-                <p class="dogQ` + i + ` inherit">` + dogQuestions[i] + `</p>
+                <div id="singleDogQ` + i + `" class="dogQ` + i + ` inherit">` + dogQuestions[i] + `<div id="dogQCorner" class="triangle"></div></div>
+                
                 `
             )
         }
     } renderDogQuestions();
 
-    
+    const individualDogQuestionEl0 = document.getElementById("singleDogQ0")
+    const individualDogQuestionEl1 = document.getElementById("singleDogQ1")
+    const individualDogQuestionEl2 = document.getElementById("singleDogQ2")
+    const individualDogQuestionEl3 = document.getElementById("singleDogQ3")
+
 
     //Adds an event listener to the yes button
     //runs the moveForward function
@@ -81,6 +87,20 @@ function initProgram() {
 
         dogquestionsEl.removeAttribute("class", "dogQ")
         dogquestionsEl.setAttribute("class", "disappear")
+
+        individualDogQuestionEl0.innerHTML = ""
+        individualDogQuestionEl1.innerHTML = ""
+        individualDogQuestionEl2.innerHTML = ""
+        individualDogQuestionEl3.innerHTML = ""
+
+        setTimeout(function () {
+            individualDogQuestionEl0.setAttribute("class", "disappear")
+            individualDogQuestionEl1.setAttribute("class", "disappear")
+            individualDogQuestionEl2.setAttribute("class", "disappear")
+            individualDogQuestionEl3.setAttribute("class", "disappear")
+        }, 750)
+
+
 
         yesButtonEl.removeAttribute("class", "yes-button")
         yesButtonEl.setAttribute("class", "disappear")
@@ -150,7 +170,7 @@ function initProgram() {
     }
 
 
-    
+
 
     //moves the dogify logo and dog image back to the start
     //brings back the the opening text
@@ -183,7 +203,7 @@ function initProgram() {
         renderDogQuestions();
     }
 
-    
+
     //brings up other dog image
     //
     function resultsPage() {
@@ -255,7 +275,7 @@ function initProgram() {
 
 
 
-    
+
 
 
     //Runs the weather API to get the longitude the cityName
