@@ -36,19 +36,10 @@ function initProgram() {
     //appends 4 of those dog questions onto the page.
     function renderDogQuestions() {
         dogquestionsEl.innerHTML = "";
-        function shuffle(a) {
-            let j, x, i;
-            for (i = a.length - 1; i > 0; i--) {
-                j = Math.floor(Math.random() * (i + 1));
-                x = a[i];
-                a[i] = a[j];
-                a[j] = x;
-            }
-        } shuffle(dogQuestions)
-        for (let i = 0; i < 4; i++) {
+        for (let i = 0; i < allQuestions.length; i++) {
             $("#dogQuestions").append(
                 `
-                <div id="singleDogQ` + i + `" class="dogQ` + i + ` inherit">` + dogQuestions[i] + `<div id="dogQCorner" class="triangle"></div></div>
+                <div id="singleDogQ` + i + `" class="dogQ` + i + ` inherit">` + allQuestions[i] + `<div id="dogQCorner" class="triangle"></div></div>
                 
                 `
             )

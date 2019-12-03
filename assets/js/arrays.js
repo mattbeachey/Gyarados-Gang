@@ -37,6 +37,40 @@ const dogQuestions = [`	Have you ever used the snapchat dog filter and thought '
     `Do you gain an irresistible feeling to scratch the back of your ear with your foot?`,
     `Are you a good boy?`]
 
+function shuffle(a) {
+    let j, x, i;
+    for (i = a.length - 1; i > 0; i--) {
+        j = Math.floor(Math.random() * (i + 1));
+        x = a[i];
+        a[i] = a[j];
+        a[j] = x;
+    }
+} shuffle(dogQuestions)
+
+const vacayQuestions = [
+    `Do rainy days and Mondays always get you down?`,
+    `Do you feel the need to go off leash?`,
+    `Are you sick of working group projects?`,
+    `Do you get too many notifications on your phone? Maybe not enough..?`,
+    `Do you ever feel like a plastic bag?`
+]
+
+
+let allQuestions = [];
+allQuestions = _.concat(vacayQuestions[Math.floor(Math.random() * vacayQuestions.length)], dogQuestions[0], dogQuestions[1], dogQuestions[2]);
+console.log(allQuestions);
+function shuffle(a) {
+    let j, x, i;
+    for (i = a.length - 1; i > 0; i--) {
+        j = Math.floor(Math.random() * (i + 1));
+        x = a[i];
+        a[i] = a[j];
+        a[j] = x;
+    }
+} shuffle(allQuestions);
+
+
+
 const arrayQuestions = [{
     questionNumber: 1,
     question: "You’re driving on the highway heading home to feed your dog. You’re about to miss your exit because your fave song came on the radio. What do you do next?",
